@@ -1,2 +1,25 @@
+User-agent: Yandex
+Disallow: /admin
+Disallow: /cart
+Disallow:/calcv2
+Disallow:/canvas
+Disallow: *?s=
+Disallow: *?p=
+User-agent: Googlebot
+Disallow: /admin
+Disallow: /cart
+Disallow:/calcv2
+Disallow:/canvas
+Disallow: *?s=
+Disallow: *?p=
+Disallow: *PHPSESSID=
+Disallow: *session_id=
 User-agent: *
-Disallow:
+Disallow: /admin
+Disallow: /cart
+Disallow:/calcv2
+Disallow:/canvas
+Disallow: *?s=
+Disallow: *?p=
+Sitemap: https://xn----7sbbtnkoefhm4b9l.xn--p1ai/sitemap.xml
+

@@ -1,0 +1,162 @@
+@media (max-width: 700px) {
+    .calc_container {
+        font-size: 0.6em; /* 1 */
+    }
+    .calc_container h5{
+        font-size: 0.9em;
+    }
+    .parametrs{
+        padding-top: 90px;
+    }
+    .choiceFacades{
+        position: absolute;
+        top:380px;
+        left: 0px;
+    }
+}
+/* default styles here for older browsers.
+      I tend to go for a 600px - 960px width max but using percentages
+   */
+@media only screen and (min-width: 960px) {
+    /* styles for browsers larger than 960px; */
+}
+@media only screen and (min-width: 1440px) {
+    /* styles for browsers larger than 1440px; */
+}
+@media only screen and (min-width: 2000px) {
+    /* for sumo sized (mac) screens */
+}
+@media only screen and (max-device-width: 480px) {
+    /* styles for mobile browsers smaller than 480px; (iPhone) */
+}
+@media only screen and (device-width: 768px) {
+    /* default iPad screens */
+    .calc_container {
+        font-size: 1em; /* 1 */
+    }
+    .calc_container h5{
+        font-size: 0.9em;
+    }
+    .parametrs{
+        padding-top: 90px;
+    }
+    .choiceFacades{
+        position: absolute;
+        top:420px;
+        left: 0px;
+    }
+}
+/* different techniques for iPad screening */
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+    /* For portrait layouts only */
+    .calc_container {
+        font-size: 1em; /* 1 */
+    }
+    .calc_container h5{
+        font-size: 0.9em;
+    }
+    .parametrs{
+        padding-top: 110px;
+    }
+    .choiceFacades{
+        position: absolute;
+        top:380px;
+        left: 0px;
+    }
+}
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+    /* For landscape layouts only */
+}
+
+
+
+
+.calc_container
+{
+    display: block;
+    min-height: 100vh;
+    min-width: 70vw;
+    /*position: relative;*/
+
+}
+.calc_body
+{
+    background-image: url('../images/k3.jpg');
+    width: 700px;
+    height: 500px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.choiceFacades{
+    position: absolute;
+    top:480px;
+    left: 0px;
+
+
+}
+input[type="number"]
+{
+
+    font-family: inherit; /* 1 */
+     /* 1 */
+    line-height: inherit; /* 1 */
+    margin: 0; /* 2 */
+    border-radius: 5px;
+    width: 80px;
+}
+
+.parallelogram {
+    position: absolute;
+    background: grey;
+    -webkit-transform: skewY(14deg);
+    -moz-transform: skewY(14deg);
+    -o-transform: skewY(14deg);
+    transform: skewY(14deg);
+    opacity: 0.5;
+}
+
+.modules {
+    position: absolute;
+    background: grey;
+    -webkit-transform: skewY(-26deg);
+    -moz-transform: skewY(-26deg);
+    -o-transform: skewY(-26deg);
+    transform: skewY(-26deg);
+    opacity: 0.5;
+}
+
+.strela{
+    background: grey;
+
+    position: absolute;
+    margin: 10px auto;
+    -webkit-transform: skewY(13deg);
+    -moz-transform: skewY(13deg);
+    -o-transform: skewY(13deg);
+    transform: skewY(13deg);
+    opacity: 0.5;
+}
+.strela:before {
+    content: open-quote;
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 14px;
+    left: -40px;
+    border-left: 40px solid grey;
+    border-bottom: 24px solid grey;
+    -webkit-transform: skewY(-33deg);
+    -moz-transform: skewY(-33deg);
+    -o-transform: skewY(-33deg);
+    transform: skewY(-33deg);
+    opacity: 0.5;
+}
+.strela.green:before{
+    border-left: 40px solid green;
+    border-bottom: 24px solid green;
+}
+.strela.grey:before{
+    border-left: 40px solid grey;
+    border-bottom: 24px solid grey;
+}

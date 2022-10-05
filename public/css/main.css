@@ -1,0 +1,46 @@
+.blur img{
+    filter: blur(0px);
+    min-height: 600px;
+    max-height: 50vh;
+    object-fit: cover;
+    object-position: bottom;
+}
+
+.slider-card{
+    position: relative;
+}
+.slider-card video{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 70%;
+    height: 800px;
+    max-height: 900px;
+}
+.slider-card h1 {
+
+    position: absolute;
+    background-color: rgba(0,0,0,0.4);
+    width: 70%;
+    top: 45%;
+    left: 0px;
+    z-index: 1;
+}
+
+.slider-card .info-block {
+    position: absolute;
+    background-color: rgba(255,255,255,0.8);
+    top: 0px;
+    left: 70%;
+    z-index: 1;
+    width: 30%;
+    height: 100%;
+
+}
+.info-block p{
+    padding: 10px;
+    border-bottom: gray solid 1px;
+    font-size: 1.1em;
+    z-index: 1;
+}
+
