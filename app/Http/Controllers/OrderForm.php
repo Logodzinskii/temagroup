@@ -45,7 +45,7 @@ class OrderForm extends Controller
       //645879928
       $text ='💬 заказ от ' . $request->firstname . ' 📱 '.  $request->tel .' 💳 ' . $request->sumForm;
       $response = array(
-          'chat_id' => 601768998,
+          'chat_id' => config('conftelegram.telegram.manager'),
           'text' => $text
       );
         $token = config('conftelegram.telegram.token');

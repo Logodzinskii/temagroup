@@ -1,8 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +15,7 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/', function () {
+
     return view('main');
 });
 
@@ -43,4 +43,5 @@ Route::get('/admin/kitchen/edit/', [\App\Http\Controllers\AdminController::class
 Route::get('/calculate/{model}', [\App\Http\Controllers\CalculateContentController::class, 'showKitchen']);
 Route::get('/contacts/', function () {
     return view('contacts');
+
 });

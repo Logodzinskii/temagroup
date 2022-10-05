@@ -226,6 +226,17 @@
 
             $('input:checkbox').on("click", function () {
 
+                if(parseInt($(this).parent().parent().children().eq(3).children().val()) === 0)
+                {
+                    $(this).parent().parent().children().eq(3).children().val(1);
+                    var length = $(this).parent().parent().children().eq(2).children().val();
+                    var count = $(this).parent().parent().children().eq(3).children().val();
+                    var nameBox = $(this).parent().parent().children().eq(0).children().last().attr('name');
+                    var facadesPrice = $('input[name="facadesPrice"]:checked').val();
+                    sendAjax(length, count, nameBox, facadesPrice);
+                }
+
+
                 if ($(this).is(":checked")) {
                     var  attr = $(this).parent().parent().children().children().eq(2);
 

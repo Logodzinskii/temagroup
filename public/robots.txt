@@ -22,3 +22,4 @@ Disallow:/canvas
 Disallow: *?s=
 Disallow: *?p=
 Sitemap: https://xn----7sbbtnkoefhm4b9l.xn--p1ai/sitemap.xml
+
