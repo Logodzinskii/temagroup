@@ -97,6 +97,7 @@ class OrderForm extends Controller
             'lengthStolBoxTop'=> 'Столешница',
             'countStolBoxTop'=> 'Количество Столешниц',
             'body'=>'Дополнительно',
+            'dopprice'=>'Доставка и сборка',
             'sumForm' => 'Итоговая цена за заказ',
         ];
         $res =[];

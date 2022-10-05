@@ -98,6 +98,10 @@
 
             $("#orderForm input:radio:first").attr('checked', true);
 
+            $('.close').on('click', function(){
+                $('.modal').hide();
+            })
+
             $(".btn-submit").click(function (e) {
                 var sum = $('.sum').text();
                 if(sum === '00')
@@ -113,6 +117,7 @@
                         type: 'POST',
                         data: formData,
                         success: function (data) {
+                            $('.modal').show();
                             $('.result').addClass('bg-success').text('Мы приняли вашу заявку, свяжемся с вами в ближайшее время');
                         }
                     });
@@ -187,6 +192,7 @@
                 $(".summError").text('');
                 $('.sumCount').text(sumCount);
                 $('.sumLength').text(sumLength);
+
             }
 
             /**
@@ -223,8 +229,57 @@
             $('.navigationCanvas input').on('change', function (){
                 start();
             })
+            $('.result input:checkbox:eq(0)').on("click", function () {
 
-            $('input:checkbox').on("click", function () {
+                var kitchenprice = parseInt($(".canvasSum").text());
+                var sborka = 0;
+                if(kitchenprice >0 )
+                {
+                    if ($(this).is(":checked"))
+                    {
+                        if($('.result input:checkbox:eq(1)').is(":checked"))
+                        {
+                            sborka = parseInt($(".canvasSum").text()) * 0.12;
+                        }
+
+                        var sum = parseInt($(".canvasSum").text());
+                        $(".sum:eq(1)").text(sum + 5000 + sborka);
+                        $(".sum:eq(0)").val(5000);
+                    }else {
+                        var sum = parseInt($(".sum:eq(1)").text());
+                        $(".sum:eq(1)").text(sum - 5000 - sborka);
+                        $(".sum:eq(0)").val(0);
+                    }
+                }
+
+            });
+            $('.result input:checkbox:eq(1)').on("click", function () {
+
+                var kitchenprice = parseInt($(".canvasSum").text());
+                var dostavka = 0;
+                if(kitchenprice >0 )
+                {
+                    if ($(this).is(":checked"))
+                    {
+
+                        if($('.result input:checkbox:eq(0)').is(":checked"))
+                        {
+                            dostavka = 5000;
+                        }
+                        var sum = parseInt($(".canvasSum").text());
+
+                        $(".sum:eq(1)").text(sum + (kitchenprice * 0.12) + dostavka);
+                        $(".sum:eq(1)").val(kitchenprice);
+                    }else {
+                        var sum = parseInt($(".sum:eq(1)").text());
+
+                        $(".sum:eq(1)").text(sum - (kitchenprice * 0.12) - dostavka);
+                        $(".sum:eq(1)").val(0);
+                    }
+                }
+
+            });
+            $('.calc_container input:checkbox').on("click", function () {
 
                 if(parseInt($(this).parent().parent().children().eq(3).children().val()) === 0)
                 {
@@ -284,6 +339,8 @@
                         sum += Number($(this).text());
                     });
                     $(".sum").text(sum);
+
+                    $('.result input:checkbox').prop('checked',false);
                 }
                 start();
             });
@@ -725,7 +782,6 @@
                             </tbody>
                         </table>
                     </div>
-
             </section>
             <div class="col-12 d-flex justify-content-center row result">
                 <section class="d-flex justify-content-center card row col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
@@ -763,6 +819,15 @@
                         <label for="Textarea" class="form-label">Дополнительная информация</label>
                         <textarea class="form-control" name="body" id="Textarea" rows="3" data-valid="0"  placeholder="Например: уточнение по параметрам кухни, или необходимости индивидуального расчета" required></textarea>
                     </div>
+                    <div class="mb-3">
+                        <input type="checkbox" name="dopprice" val="5000">
+                        <label for="dopprice" class="form-label">Доставка. (По г.Екатеринбург - от 5000 руб)</label>
+                    </div>
+                    <div class="mb-3">
+                        <input type="checkbox" name="dopprice" val="">
+                        <label for="dopprice" class="form-label">Сборка. (12% от заказа)</label>
+                    </div>
+
                     <button type="submit" class="btn btn-primary btn-submit" disabled>Отправить</button>
                     <div class="mb-3">
                         <h2 class="summError bg-danger"></h2>
@@ -773,5 +838,28 @@
                 </section>
             </div>
         </form>
+        <div class="modal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Сообщение</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body bg-success text-white">
+
+                        <p>Благодарим за ваше обращение в нашу компанию. </p>
+                        <p>Мы свяжемся с вами для уточнения заказа.</p>
+
+                    </div>
+                    <div class="bg-warning">
+                        <p>Окончательная стоимость заказа оговаривается
+                            при заключении договора.
+                            Стоимость указанная в расчете калькулятора не является окончательной.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
         @include('footer')
     </body>
