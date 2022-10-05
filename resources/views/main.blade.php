@@ -81,6 +81,9 @@
 
                 console.log(sumValid);
             }
+            $('.close').on('click', function(){
+                $('.modal').hide();
+            })
             $(".btn-submit").click(function (e) {
 
 
@@ -92,6 +95,7 @@
                         type: 'POST',
                         data: formData,
                         success: function (data) {
+                             $('.modal').show();
                             $('#orderForm').text('Мы приняли вашу заявку, свяжемся с вами в ближайшее время').addClass('bg-success');
                         }
                     });
@@ -377,6 +381,28 @@
             </div>
 
         </section>
+        <div class="modal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Сообщение</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body bg-success text-white">
 
+                        <p>Благодарим за ваше обращение в нашу компанию. </p>
+                        <p>Мы свяжемся с вами для уточнения заказа.</p>
+
+                    </div>
+                    <div class="bg-warning">
+                        <p>Окончательная стоимость заказа оговаривается
+                        при заключении договора.
+                        Стоимость указанная в расчете калькулятора не является окончательной.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
         @extends('footer')
     </body>
