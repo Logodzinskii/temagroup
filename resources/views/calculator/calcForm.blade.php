@@ -340,8 +340,9 @@
                     });
                     $(".sum").text(sum);
 
-                    $('.result input:checkbox').prop('checked',false);
+
                 }
+                $('.result input:checkbox').prop('checked',false);
                 start();
             });
             /**
