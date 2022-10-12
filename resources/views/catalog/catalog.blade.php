@@ -108,7 +108,7 @@
 
                     margin:10,
                     dots: true,
-                    autoplay:false,
+                    autoplay:true,
                     responsive:{
                         0:{
                             items:1
@@ -129,7 +129,7 @@
 
                     responsive:{
                         0:{
-                            items:1
+                            items:2
                         },
                         600:{
                             items:2
@@ -181,18 +181,37 @@
     </head>
     <body class="container-fluid p-0 m-0">
         @include('header')
-        <h1>Название кухни</h1>
-        <div class="row d-flex flex-wrap">
-            <div class="owl-carousel owl-theme owl-loaded side" style="min-height: 85vh; max-width: 70vw">
-                <div class="owl-stage-outer">
+        <h1>Кухня "Шторм"</h1>
+        <div class="row d-flex flex-wrap" >
+            <div class="owl-carousel owl-theme owl-loaded side col-6"  >
+                <div class="owl-stage-outer" >
                     <div class="owl-stage blur">
-                        <div class="owl-item slider-card">
-                            <img src="{{asset('images/main/kitchen_2_main.jpg')}}"  class="card-img-top" alt="шкаф на заказ компания-тема">
+                        <div class="owl-item ">
+                            <img src="{{asset('images/projects/202201/1.png')}}"   alt="шкаф на заказ компания-тема">
                         </div>
+                        <div class="owl-item ">
+                            <img src="{{asset('images/projects/202201/img.png')}}"   alt="шкаф на заказ компания-тема">
+                        </div>
+                        <div class="owl-item ">
+                            <img src="{{asset('images/projects/202201/img_1.png')}}"   alt="шкаф на заказ компания-тема">
+                        </div>
+                        <div class="owl-item ">
+                            <img src="{{asset('images/projects/202201/img_2.png')}}"   alt="шкаф на заказ компания-тема">
+                        </div>
+                        <div class="owl-item ">
+                            <img src="{{asset('images/projects/202201/img_3.png')}}"    alt="шкаф на заказ компания-тема">
+                        </div>
+                        <div class="owl-item ">
+                            <img src="{{asset('images/projects/202201/img_4.png')}}"   alt="шкаф на заказ компания-тема">
+                        </div>
+                        <div class="owl-item ">
+                            <img src="{{asset('images/projects/202201/img_5.png')}}"   alt="шкаф на заказ компания-тема">
+                        </div>
+
                     </div>
                 </div>
             </div>
-            <div class="info-block" style="min-height: 85vh; max-width: 29vw">
+            <div class="info-block col-6" >
                 <div class="card">
                     <div class="card-title">
                         <h1>Характеристики</h1>
