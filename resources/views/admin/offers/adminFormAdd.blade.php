@@ -233,7 +233,7 @@
                             <td><input type="number" name="installation_price"></td>
                         </tr>
                         <tr>
-                            <th scope="row" >14</th>
+                            <th scope="row" >15</th>
                             <td>status</td>
                             <td><input type="number" name="status"></td>
                         </tr>

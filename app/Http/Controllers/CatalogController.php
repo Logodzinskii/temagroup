@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Catalog;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Symfony\Component\HttpFoundation\File\File;
 
 class CatalogController extends Controller
@@ -78,6 +79,47 @@ class CatalogController extends Controller
         return [$path[0]['article']];
     }
 
+    public function updateOffer(Request $request)
+    {
+        if($request->hasFile('image'))
+        {
+            $paths =[];
+
+            foreach ($request->file('image') as $file)
+            {
+                $delPath = 'images/projects/'.$request->article;
+                \Illuminate\Support\Facades\File::deleteDirectory($delPath);
+
+
+                $name = $file->getClientOriginalName();
+                $file->move('images/projects/'.$request->article, $name);
+                $paths[]= 'images/projects/'.$request->article. '/' . $name;
+            }
+
+        }
+
+        $pathFile = '';
+        if($request->hasFile('file'))
+        {
+            $delPathPrices = 'prices/'.$request->article;
+            \Illuminate\Support\Facades\File::deleteDirectory($delPathPrices);
+            $file = $request->file('file');
+            $file->move('prices/'. $request->article, $request->article . '.pdf');
+            $pathFile = $request->article . '.pdf';
+        }
+
+        $affected = DB::table('catalogs')
+            ->where('article', $request->article)
+            ->update([
+                'category' => $request->category,
+                'article' =>$request->article,
+                'image' => json_encode($paths),
+                'file'=>$pathFile,
+                ]);
+
+        return [$request->category];
+    }
+
     public function listOffers()
     {
         return view('admin/adminOffers', ['offers'=>Catalog::all()]);
@@ -85,6 +127,12 @@ class CatalogController extends Controller
 
     public function formAddOffer()
     {
+
         return view('admin/offers/adminFormAdd');
+    }
+
+    public function formUpdateOffer($article)
+    {
+        return view('admin/offers/adminFormUpdate',['catalog'=>Catalog::where('article', $article)->get()]);
     }
 }

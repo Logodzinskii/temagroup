@@ -51,8 +51,9 @@ Route::get('/admin/kitchen/edit/', [AdminController::class, 'editFacadesPrice'])
 Route::get('/admin/offers/edit/', [\App\Http\Controllers\CatalogController::class, 'listOffers'])->middleware('auth');
 Route::post('/admin/offers/edit/', [\App\Http\Controllers\CatalogController::class, 'create'])->middleware('auth');
 Route::delete('/admin/offers/edit/', [\App\Http\Controllers\CatalogController::class, 'deleteOffer'])->middleware('auth');
+Route::put('/admin/offers/edit/', [\App\Http\Controllers\CatalogController::class, 'updateOffer'])->middleware('auth');
 Route::get('/admin/offer/add/', [\App\Http\Controllers\CatalogController::class, 'formAddOffer'])->middleware('auth');
-
+Route::get('/admin/offer/add/{article}', [\App\Http\Controllers\CatalogController::class, 'formUpdateOffer'])->middleware('auth');
 /**
  * Маршрут для контента страницы
  */

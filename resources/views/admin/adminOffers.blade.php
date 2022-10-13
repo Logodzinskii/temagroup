@@ -17,6 +17,24 @@
         <script type="text/javascript" src="{{asset('js/calculate_slider.js')}}"></script>
         <script>
             $(document).ready(function (){
+                $('.update').click( function(e){
+                    e.preventDefault();
+                    var _token = $('meta[name="csrf-token"]').attr('content');
+                    var article = $(this).data('article');
+
+                    $.ajax({
+                        url: "{{ url('/admin/offers/edit/') }}",
+                        type: 'PUT',
+                        dataType: "JSON",
+                        data: {
+                            "_token": _token,
+                            "article": article,
+                        },
+                        success: function (data) {
+
+                        }
+                    });
+                })
                     $('.delete').click( function(e){
                             e.preventDefault();
                             var _token = $('meta[name="csrf-token"]').attr('content');
@@ -31,11 +49,9 @@
                                     "id": id
                                 },
                                 success: function (data) {
-
                                     $('.tableValue tr:last').remove();
                                 }
                             });
-
                         })
             })
         </script>
@@ -61,7 +77,7 @@
                             <th scope="row" ></th>
                             <td>{{$offer['category']}}</td>
                             <td>{{$offer['name']}}</td>
-                            <td><a href="/admin/offer/add/">{{$offer['article']}}</a></td>
+                            <td><a href="/admin/offer/add/{{{$offer['article']}}}">{{$offer['article']}}</a></td>
                             <td>{{$offer['price']}}</td>
                             <td>{{$offer['status']}}</td>
                             <td><a href="" class="delete" data-id="{{$offer['id']}}">Удалить</a> </td>
