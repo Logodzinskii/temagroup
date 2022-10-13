@@ -4,7 +4,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <META NAME="description" content="Мебель на заказ в Екатеринбурге по вашим размерам. Узнай стоимость новой кухни в калькуляторе на сайте. Звони +7 963 272 72 82">
         <meta name="csrf-token" content="{{ csrf_token() }}" />
-        <title>Мебель на заказ в Екатеринбурге. Мебельный интерьер кухни, визуализация проекта.</title>
+        <title>Мебель для всех </title>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <link rel="icon" type="image/png" href="{{ asset('images/logo/logo.png') }}"/>
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -184,26 +184,13 @@
         <div class="owl-carousel owl-theme owl-loaded side" style="min-height: 85vh">
             <div class="owl-stage-outer">
                 <div class="owl-stage blur">
-                    <div class="owl-item slider-card">
-                        <h1 class="text-center text-white">КОМПАНИЯ-ТЕМА</h1>
-                        <div class="info-block">
-                            <p>Изготовим корпусную мебель</p>
-                            <p>Сделаем замер</p>
-                            <p>Учтем все детали</p>
-                            <p>Произведем доставку и монтаж</p>
-                        </div>
-                        <img src="{{asset('images/main/kitchen_1_main.jpg')}}"  class="card-img-top" alt="шкаф на заказ компания-тема">
-                    </div>
-                <!--<div class="owl-item slider-card">
-                        <h1 class="text-center text-white">РЕАЛИСТИЧНАЯ КАРТИНКА, БУДУЩЕЙ МЕБЕЛИ!</h1>
-                        <div class="info-block">
-                            <p>Проработаем дизайн проект до мелочей</p>
-                            <p>Подстроимся под любые размеры</p>
-                            <p>Предложим альтернативу</p>
-                        </div>
-
-                        <video controls autoplay><source src="{{asset('video/videoplayback.mp4')}}" type="video/mp4" controls width="250"></video>
-                    </div>-->
+                   <div class="owl-item slider-card">
+                       <img src="images/main/kitchen_1_main.jpg"  class="card-img-top" alt="шкаф на заказ компания-тема">
+                            <h1 class="text-center text-white">КОМПАНИЯ-ТЕМА</h1>
+                                <div class="info-block">
+                                   <p>Тема</p>
+                                </div>
+                   </div>
                 </div>
             </div>
         </div>
@@ -234,18 +221,47 @@
                 </div>
             </div>
         </div>
-        <div class="d-flex row p-0 m-0" style="height: 60vh">
-            <h1 class="text-center">Делаем визуализацию проекта</h1>
-            <div class="col info-block">
-                <p class="text-center bg-light">РЕАЛИСТИЧНАЯ КАРТИНКА, БУДУЩЕЙ МЕБЕЛИ!</p>
-                <p>Проработаем дизайн проект до мелочей</p>
-                <p>Подстроимся под любые размеры</p>
-                <p>Предложим альтернативу</p>
+        <h1 class="text-center">Делаем визуализацию проекта</h1>
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-2" >
+                <div class="col info-block">
+                    <p class="text-center bg-light">РЕАЛИСТИЧНАЯ КАРТИНКА, БУДУЩЕЙ МЕБЕЛИ!</p>
+                    <p>Проработаем дизайн проект до мелочей</p>
+                    <p>Подстроимся под любые размеры</p>
+                    <p>Предложим альтернативу</p>
+                </div>
+                <video class="col" controls autoplay width="100%" height="400">
+                    <source src="{{asset('video/videoplayback.mp4')}}"  type="video/mp4" controls width="250">
+                </video>
             </div>
-            <video controls autoplay width="400" height="400" class="col">
-                <source src="{{asset('video/videoplayback.mp4')}}"  type="video/mp4" controls width="250">
-            </video>
         </div>
+
+        <section class="m-3">
+            <h1 class="text-center">Готовые решения</h1>
+            <div class="container">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                    @foreach($catalog as $cat)
+                    <div class="col">
+                        <div class="card shadow-sm">
+                           <img src="{{json_decode($cat['image'], true)[0]}}" alt="компания-тема кухня">
+                            <div class="card-body">
+                                <p class="card-text">{{$cat['meta_descriptions']}}</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <h2>
+                                            <span style="color: darkred">Цена:</span> <b>{{$cat['price']}}</b>
+                                        </h2>
+                                        <a href="/catalog/{{$cat['article']}}" class="btn btn-sm btn-outline-secondary">Посмотреть</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+
+                </div>
+            </div>
+        </section>
         <section class="bg-dark">
             <h1 class="text-white text-center">Фотографии готовых работ</h1>
             <div class="owl-carousel owl-theme owl-loaded side" style="min-height: 100vh">

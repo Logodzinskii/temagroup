@@ -1,7 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Models\Pages;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CalculateContentController;
+use App\Http\Controllers\OrderForm;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\UsersControllers;
+use App\Http\Controllers\UsersOrders;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,33 +20,49 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-
-    return view('main');
-});
 
 
-Route::get('/admin/',[\App\Http\Controllers\AdminController::class, 'index'])->middleware('auth');
+/*foreach (Pages::all() as $page)
+{
+    Route::get($page->pageRoutName, [$page->pageMetaName, $page->pageAction]);
+}*/
 
-Route::post('order/user/store', [\App\Http\Controllers\OrderForm::class, 'orderUserStore'])->name('order.user.store');
+Route::get('/',[\App\Http\Controllers\CatalogController::class, 'index']);
 
-Route::post('ajax/data/resp', [\App\Http\Controllers\CalculateContentController::class, 'ajaxDataResp'])->name('ajax.data.resp');
+Route::get('/admin/',[AdminController::class, 'index'])->middleware('auth');
 
-Route::post('add/facades/price', [\App\Http\Controllers\AdminController::class, 'addFacadesPrice'])->name('add.facades.price');
-Route::get('delete/facades/price/{id}/', [\App\Http\Controllers\AdminController::class, 'deleteFacadesPrice']);
-Route::post('update/facades/price', [\App\Http\Controllers\AdminController::class, 'updateFacadesPrice'])->name('update.facades.price');
+Route::post('order/user/store', [OrderForm::class, 'orderUserStore'])->name('order.user.store');
 
-Route::post('update/Price/FacadesBoxModules', [\App\Http\Controllers\CalculateContentController::class, 'updatePriceFacadesBoxModules'])->name('update.price.facadesBoxModules');
+Route::post('ajax/data/resp', [CalculateContentController::class, 'ajaxDataResp'])->name('ajax.data.resp');
+
+Route::post('add/facades/price', [AdminController::class, 'addFacadesPrice'])->name('add.facades.price');
+Route::get('delete/facades/price/{id}/', [AdminController::class, 'deleteFacadesPrice']);
+Route::post('update/facades/price', [AdminController::class, 'updateFacadesPrice'])->name('update.facades.price');
+
+Route::post('update/Price/FacadesBoxModules', [CalculateContentController::class, 'updatePriceFacadesBoxModules'])->name('update.price.facadesBoxModules');
 
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/cart/{id}', [\App\Http\Controllers\OrderForm::class, 'showDetailOrder'])->middleware('auth');
-Route::get('/admin/kitchen/edit/', [\App\Http\Controllers\AdminController::class, 'editFacadesPrice'])->middleware('auth');
+Route::get('/cart/{id}', [OrderForm::class, 'showDetailOrder'])->middleware('auth');
+Route::get('/admin/kitchen/edit/', [AdminController::class, 'editFacadesPrice'])->middleware('auth');
+Route::get('/admin/offers/edit/', [\App\Http\Controllers\CatalogController::class, 'listOffers'])->middleware('auth');
+Route::post('/admin/offers/edit/', [\App\Http\Controllers\CatalogController::class, 'create'])->middleware('auth');
+Route::delete('/admin/offers/edit/', [\App\Http\Controllers\CatalogController::class, 'deleteOffer'])->middleware('auth');
+Route::get('/admin/offer/add/', [\App\Http\Controllers\CatalogController::class, 'formAddOffer'])->middleware('auth');
+
+/**
+ * Маршрут для контента страницы
+ */
+Route::get('/admin/content/edit/', [PageController::class, 'index'])->middleware('auth');
+Route::delete('/admin/content/edit/',[PageController::class, 'deleteContent'])->middleware('auth');
+Route::post('/admin/content/edit/',[PageController::class, 'createContent'])->middleware('auth');
+
 Route::get('/catalog/{article}', [\App\Http\Controllers\CatalogController::class, 'store']);
-Route::get('/calculate/{model}', [\App\Http\Controllers\CalculateContentController::class, 'showKitchen']);
+
+Route::get('/calculate/{model}', [CalculateContentController::class, 'showKitchen']);
 Route::get('/contacts/', function () {
     return view('contacts');
 

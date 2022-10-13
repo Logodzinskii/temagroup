@@ -13,14 +13,18 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('price_kitchens', function (Blueprint $table) {
+       Schema::create('page_public', function (Blueprint $table) {
             $table->id();
-            $table->string('nameProject');
-            $table->string('nameFacades');
-            $table->string('imageFacades');
-            $table->string('typeFacades');
+            $table->string('pageRoutName');
+            $table->string('pageMetaName');
+            $table->string('pageMetaDescriptions');
+            $table->string('pageMethod');
+            $table->string('pageAction');
+            $table->string('pageAuth');
+            $table->string('pageStatus');
             $table->timestamps();
         });
+
     }
 
     /**
@@ -30,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('price_kitchens');
+        //
     }
 };
