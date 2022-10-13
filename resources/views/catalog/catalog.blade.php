@@ -2,9 +2,9 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <META NAME="description" content="Мебель на заказ в Екатеринбурге по вашим размерам. Узнай стоимость новой кухни в калькуляторе на сайте. Звони +7 963 272 72 82">
+        <META NAME="description" content="{{$offer[0]['meta_descriptions']}}">
         <meta name="csrf-token" content="{{ csrf_token() }}" />
-        <title>Мебель на заказ в Екатеринбурге. Мебельный интерьер кухни, визуализация проекта.</title>
+        <title>{{$offer[0]['meta_title']}}</title>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <link rel="icon" type="image/png" href="{{ asset('images/logo/logo.png') }}"/>
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -181,70 +181,55 @@
     </head>
     <body class="container-fluid p-0 m-0">
         @include('header')
-        <h1>Кухня "Шторм"</h1>
-        <div class="row d-flex flex-wrap" >
-            <div class="owl-carousel owl-theme owl-loaded side col-6"  >
-                <div class="owl-stage-outer" >
-                    <div class="owl-stage blur">
-                        <div class="owl-item ">
-                            <img src="{{asset('images/projects/202201/1.png')}}"   alt="шкаф на заказ компания-тема">
+        <h1>{{$offer[0]['meta_title']}}</h1>
+            <div class="container" >
+                <div class=" row row-cols-1 row-cols-sm-2 row-cols-md-2 g-2">
+                    <div class="col owl-carousel owl-theme owl-loaded side"  >
+                        <div class="owl-stage-outer" >
+                            <div class="owl-stage blur">
+                                @foreach(json_decode($offer[0]['image'],true) as $image)
+                                    <div class="owl-item">
+                                        <div class="card" >
+                                            <div class="card_body" style="height: 650px; width: 420px">
+                                                <img src="{{asset($image)}}" height="650" width="250" alt="шкаф на заказ компания-тема">
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
                         </div>
-                        <div class="owl-item ">
-                            <img src="{{asset('images/projects/202201/img.png')}}"   alt="шкаф на заказ компания-тема">
+                    </div>
+                    <div class="col card">
+                        <div class="card-title">
+                            <h1>Характеристики</h1>
+                            <h3 style="color: grey">арт. {{$offer[0]['article']}}</h3>
                         </div>
-                        <div class="owl-item ">
-                            <img src="{{asset('images/projects/202201/img_1.png')}}"   alt="шкаф на заказ компания-тема">
+                        <div class="card-text">
+                            <div>
+                                <ul class="row d-flex">
+                                    <li>{{$offer[0]['configurations']}}</li>
+                                </ul>
+                                <h2>Комплектация</h2>
+                                <ul class="row d-flex">
+                                    <li>{{$offer[0]['options']}}</li>
+                                </ul>
+                            </div>
+                            <div style="border-bottom: solid grey 1px;">
+                                <h2>
+                                    <span style="color: darkred">Цена:</span> <b>{{$offer[0]['price']}}</b> р.
+                                </h2>
+                            </div>
+                            <h2>Дополнительная оплата</h2>
+                            <div>
+                                <ul class="row d-flex">
+                                    <li>Доставка: {{$offer[0]['delivery_price']}}</li>
+                                    <li>Сборка: {{$offer[0]['installation_price']}}</li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="owl-item ">
-                            <img src="{{asset('images/projects/202201/img_2.png')}}"   alt="шкаф на заказ компания-тема">
-                        </div>
-                        <div class="owl-item ">
-                            <img src="{{asset('images/projects/202201/img_3.png')}}"    alt="шкаф на заказ компания-тема">
-                        </div>
-                        <div class="owl-item ">
-                            <img src="{{asset('images/projects/202201/img_4.png')}}"   alt="шкаф на заказ компания-тема">
-                        </div>
-                        <div class="owl-item ">
-                            <img src="{{asset('images/projects/202201/img_5.png')}}"   alt="шкаф на заказ компания-тема">
-                        </div>
-
                     </div>
                 </div>
             </div>
-            <div class="info-block col-6" >
-                <div class="card">
-                    <div class="card-title">
-                        <h1>Характеристики</h1>
-                        <h3 style="color: grey">арт. 202201</h3>
-                    </div>
-                    <div class="card-text">
-                    <div>
-                        <ul class="row d-flex">
-                            <li>Материал фасадов:  Прямой, пленка</li>
-                            <li>Материал модулей:  ДСП</li>
-                            <li>Фурнитура: эконом </li>
-                            <li>Длина: 2500 мм </li>
-                            <li>Высота: 2500 мм </li>
-                        </ul>
-                        <h2>Комплектация</h2>
-                        <ul class="row d-flex">
-                            <li>Шкаф для мойки:  1 шт</li>
-                            <li>Шкаф для духовки:  1 шт</li>
-                            <li>Бутылошница: 1 шт</li>
-                            <li>Шкаф для духовки: 1 шт </li>
-                            <li>Пенал для холодильника: 1шт</li>
-                        </ul>
-                    </div>
-                    <div style="border-bottom: solid grey 1px;">
-                        <h2>
-                            <span style="color: darkred">Цена:</span> <b>156 000</b>
-                        </h2>
-                    </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <h1 class="text-center">Готовы сделать заказ?</h1>
         <section class="p-0 m-0 d-flex justify-content-around align-items-start flex-wrap">
             <form class="card" id="orderForm">
@@ -318,24 +303,20 @@
             <div class="owl-carousel owl-theme owl-loaded side">
                 <div class="owl-stage-outer">
                     <div class="owl-stage">
+                        @foreach($offers as $offer)
                         <div class="owl-item">
-                            <img src="{{asset('images/main/kitchen_1_main.jpg')}}" height="300" class="card-img-top" alt="шкаф на заказ компания-тема">
+                            <img src="{{asset(json_decode($offer['image'])[0])}}" height="300" class="card-img-top" alt="шкаф на заказ компания-тема">
                             <div class="card-body d-flex justify-content-center">
-                                <h2>Кухни 1</h2>
+                                <h2>{{$offer['meta_title']}}</h2>
+                                <div class="btn-group">
+                                    <h2>
+                                        <span style="color: darkred">Цена:</span> <b>{{$offer['price']}}</b>
+                                    </h2>
+                                    <a href="/catalog/{{$offer['article']}}" class="btn btn-sm btn-outline-secondary">Посмотреть</a>
+                                </div>
                             </div>
                         </div>
-                        <div class="owl-item">
-                            <img src="{{asset('images/main/kitchen_2_main.jpg')}}" height="300" class="card-img-top" alt="шкаф на заказ компания-тема">
-                            <div class="card-body d-flex justify-content-center">
-                                <h2>Кухня 2</h2>
-                            </div>
-                        </div>
-                        <div class="owl-item">
-                            <img src="{{asset('images/main/kitchen_3_main.jpg')}}" height="300" class="card-img-top" alt="шкаф на заказ компания-тема">
-                            <div class="card-body d-flex justify-content-center">
-                                <h2>Кухня 3</h2>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

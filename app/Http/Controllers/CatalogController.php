@@ -6,6 +6,7 @@ use App\Models\Catalog;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
 use Symfony\Component\HttpFoundation\File\File;
 
 class CatalogController extends Controller
@@ -19,8 +20,8 @@ class CatalogController extends Controller
     }
     public function store($article)
     {
-
-        return view('catalog/catalog');
+        $offers = Catalog::all();
+        return view('catalog/catalog', ['offer'=>Catalog::where('article', $article)->get(), 'offers'=>$offers]);
     }
 
     public function create(Request $request)
@@ -33,10 +34,11 @@ class CatalogController extends Controller
             {
                 $name = $file->getClientOriginalName();
                 $file->move('images/projects/'.$request->article, $name);
-                $paths[]= 'images/projects/'.$request->article. '/' . $name;
+                $paths[] = 'images/projects/'.$request->article. '/' . $name;
             }
 
         }
+
         $pathFile = '';
         if($request->hasFile('file'))
         {
@@ -62,7 +64,7 @@ class CatalogController extends Controller
             $offer->installation_price= $request->installation_price;
             $offer->status= $request->status;
             $offer->save();
-            return['200'];
+        return \redirect('/admin/offers/edit/');
 
     }
 
@@ -81,21 +83,25 @@ class CatalogController extends Controller
 
     public function updateOffer(Request $request)
     {
+        $offer=Catalog::where('article',$request->article)
+            ->get();
         if($request->hasFile('image'))
         {
             $paths =[];
+            $delPath = 'images/projects/'.$request->article;
+            \Illuminate\Support\Facades\File::deleteDirectory($delPath);
 
             foreach ($request->file('image') as $file)
             {
-                $delPath = 'images/projects/'.$request->article;
-                \Illuminate\Support\Facades\File::deleteDirectory($delPath);
-
 
                 $name = $file->getClientOriginalName();
                 $file->move('images/projects/'.$request->article, $name);
                 $paths[]= 'images/projects/'.$request->article. '/' . $name;
             }
 
+        }else{
+
+            $paths=$offer[0]['image'];
         }
 
         $pathFile = '';
@@ -106,6 +112,9 @@ class CatalogController extends Controller
             $file = $request->file('file');
             $file->move('prices/'. $request->article, $request->article . '.pdf');
             $pathFile = $request->article . '.pdf';
+        }else{
+
+            $paths=$offer[0]['file'];
         }
 
         $affected = DB::table('catalogs')
@@ -113,11 +122,22 @@ class CatalogController extends Controller
             ->update([
                 'category' => $request->category,
                 'article' =>$request->article,
-                'image' => json_encode($paths),
-                'file'=>$pathFile,
+                'type' => $request->type,
+                'name' => $request->name,
+                'meta_title' => $request->meta_title,
+                'meta_descriptions' => $request->meta_descriptions,
+                'configurations'=> $request->configurations,
+                'options'=> $request->options,
+                'image'=> json_encode($paths),
+                'file'=> $pathFile,
+                'price'=> $request->price,
+                'delivery_price'=> $request->delivery_price,
+                'delivery_day'=> $request->delivery_day,
+                'installation_price'=> $request->installation_price,
+               'status'=> $request->status,
                 ]);
 
-        return [$request->category];
+        return \redirect('/admin/offers/edit/');
     }
 
     public function listOffers()

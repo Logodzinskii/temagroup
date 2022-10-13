@@ -65,12 +65,12 @@
                         <tr>
                             <th scope="row" >7</th>
                             <td>configurations</td>
-                            <td><input type="text" name="configurations" value="{{$catalog[0]['configurations']}}"></td>
+                            <td><textarea name="configurations">{{$catalog[0]['configurations']}}</textarea></td>
                         </tr>
                         <tr>
                             <th scope="row" >8</th>
                             <td>options</td>
-                            <td><input type="text" name="options" value="{{$catalog[0]['options']}}"></td>
+                            <td><textarea name="options">{{$catalog[0]['options']}}</textarea></td>
                         </tr>
                         <tr>
                             <th scope="row" >9</th>

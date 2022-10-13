@@ -195,12 +195,12 @@
                         <tr>
                             <th scope="row" >7</th>
                             <td>configurations</td>
-                            <td><input type="text" name="configurations"></td>
+                            <td><textarea rows="10" cols="33" name="configurations"></textarea></td>
                         </tr>
                         <tr>
                             <th scope="row" >8</th>
                             <td>options</td>
-                            <td><input type="text" name="options"></td>
+                            <td><textarea name="options" rows="10" cols="33"></textarea></td>
                         </tr>
                         <tr>
                             <th scope="row" >9</th>
