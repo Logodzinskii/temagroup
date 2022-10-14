@@ -155,4 +155,10 @@ class CatalogController extends Controller
     {
         return view('admin/offers/adminFormUpdate',['catalog'=>Catalog::where('article', $article)->get()]);
     }
+
+    public function downloadOffer()
+    {
+        /*$path = Storage::disk('local')->path($path);
+        return response()->download($path, basename($path));*/
+    }
 }

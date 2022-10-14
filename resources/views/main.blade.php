@@ -4,7 +4,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <META NAME="description" content="Мебель на заказ в Екатеринбурге по вашим размерам. Узнай стоимость новой кухни в калькуляторе на сайте. Звони +7 963 272 72 82">
         <meta name="csrf-token" content="{{ csrf_token() }}" />
-        <title>Мебель для всех </title>
+        <title>Мебель на заказ в Екатеринбурге. Мебельный интерьер кухни, визуализация проекта.</title>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <link rel="icon" type="image/png" href="{{ asset('images/logo/logo.png') }}"/>
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -188,7 +188,11 @@
                        <img src="images/main/kitchen_1_main.jpg"  class="card-img-top" alt="шкаф на заказ компания-тема">
                             <h1 class="text-center text-white">КОМПАНИЯ-ТЕМА</h1>
                                 <div class="info-block">
-                                   <p>Тема</p>
+                                    <p>Изготовим корпусную мебель</p>
+                                    <p>Сделаем замеры</p>
+                                    <p>Учтем все детали</p>
+                                    <p>Произведем доставку</p>
+                                    <p>Сделаем монтаж</p>
                                 </div>
                    </div>
                 </div>
@@ -237,7 +241,9 @@
         </div>
 
         <section class="m-3">
+            @if(count($catalog) > 0)
             <h1 class="text-center">Готовые решения</h1>
+            @endif
             <div class="container">
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                     @foreach($catalog as $cat)
@@ -272,7 +278,6 @@
                                 <img src="{{asset('images/resoultProject/'. $i . '.jpg')}}"/>
                             </div>
                         @endfor
-
                     </div>
                 </div>
             </div>
@@ -287,7 +292,6 @@
                                 <img src="{{asset('images/partners/'. $i . '.jpg')}}"/>
                             </div>
                         @endfor
-
                     </div>
                 </div>
             </div>
@@ -413,7 +417,7 @@
 
                     </div>
                     <div class="bg-warning">
-                        <p>Окончательная стоимость заказа оговаривается
+                        <p>Окончательная стоимость заказа обговаривается
                         при заключении договора.
                         Стоимость указанная в расчете калькулятора не является окончательной.</p>
                     </div>

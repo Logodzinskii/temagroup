@@ -129,13 +129,13 @@
 
                     responsive:{
                         0:{
-                            items:2
+                            items:1
                         },
                         600:{
-                            items:2
+                            items:3
                         },
                         1000:{
-                            items:3
+                            items:4
                         }
                     }
                 }
@@ -184,14 +184,14 @@
         <h1>{{$offer[0]['meta_title']}}</h1>
             <div class="container" >
                 <div class=" row row-cols-1 row-cols-sm-2 row-cols-md-2 g-2">
-                    <div class="col owl-carousel owl-theme owl-loaded side"  >
+                    <div class="col owl-carousel owl-theme owl-loaded "  >
                         <div class="owl-stage-outer" >
-                            <div class="owl-stage blur">
+                            <div class="owl-stage">
                                 @foreach(json_decode($offer[0]['image'],true) as $image)
                                     <div class="owl-item">
                                         <div class="card" >
-                                            <div class="card_body" style="height: 650px; width: 420px">
-                                                <img src="{{asset($image)}}" height="650" width="250" alt="шкаф на заказ компания-тема">
+                                            <div class="card_body">
+                                                <img src="{{asset($image)}}" alt=""/>
                                             </div>
                                         </div>
                                     </div>
@@ -226,53 +226,66 @@
                                     <li>Сборка: {{$offer[0]['installation_price']}}</li>
                                 </ul>
                             </div>
+                            <h2>Проект в формате pdf</h2>
+                            <ul class="row d-flex">
+                                <li><a href="/public/prices/{{$offer[0]['article']}}/{{$offer[0]['file']}}" download="filename">Скачать</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
-        <h1 class="text-center">Готовы сделать заказ?</h1>
-        <section class="p-0 m-0 d-flex justify-content-around align-items-start flex-wrap">
-            <form class="card" id="orderForm">
-                <h2>Отправьте заявку на расчет</h2>
+        <h1 class="text-center ">Готовы сделать заказ?</h1>
+        <section class="p-0 m-0 d-flex justify-content-around align-items-start flex-wrap bg-dark text-white">
+            <form class="container" id="orderForm">
                 @csrf
+                <h2 class="text-center">Отправьте заявку на расчет</h2>
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-2 ">
+                    <input type="hidden" name="category" value="{{$offer[0]['category']}}">
+                    <input type="hidden" name="article" value="{{$offer[0]['article']}}">
+                    <input type="hidden" name="sumForm" value="{{$offer[0]['price']}}">
+                    <div class="col">
+                        <div class="mb-6">
+                            <label for="InputName" class="form-label">Ваше имя</label>
+                            <input type="text" name="firstname" class="form-control" id="InputName" value="" data-valid="0" required>
+                            <div class="valid-feedback">
+                                ok
+                            </div>
+                            <div class="invalid-feedback">
+                                Пожалуйста, сообщите ваше имя и фамилию.
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <label for="InputEmail" class="form-label">Email для связи с вами</label>
+                            <input type="email" name="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" data-valid="0" required>
+                            <div class="valid-feedback">
+                                ok
+                            </div>
+                            <div class="invalid-feedback">
+                                Пожалуйста, укажите вашу почту.
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <label for="InputTel" class="form-label">Ваш контактный телефон</label>
+                            <input type="tel" name="tel" class="form-control" id="InputTel" data-valid="0"/>
+                            <div class="valid-feedback">
+                                ok
+                            </div>
+                            <div class="invalid-feedback">
+                                Пожалуйста, укажите вашу почту.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="mb-6">
+                            <label for="Textarea" class="form-label">Дополнительная информация</label>
+                            <textarea class="form-control" name="body" id="Textarea" rows="7" data-valid="0" placeholder="Например: уточнение по параметрам кухни, или необходимости индивидуального расчета" required></textarea>
+                        </div>
+                        <input type="hidden"  name="kitchenConfigurations" value="{{$offer[0]['meta_title']}}" />
 
-                <div class="mb-6">
-                    <label for="InputName" class="form-label">Ваше имя</label>
-                    <input type="text" name="firstname" class="form-control" id="InputName" value="" data-valid="0" required>
-                    <div class="valid-feedback">
-                        ok
                     </div>
-                    <div class="invalid-feedback">
-                        Пожалуйста, сообщите ваше имя и фамилию.
-                    </div>
+
                 </div>
-                <div class="mb-6">
-                    <label for="InputEmail" class="form-label">Email для связи с вами</label>
-                    <input type="email" name="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" data-valid="0" required>
-                    <div class="valid-feedback">
-                        ok
-                    </div>
-                    <div class="invalid-feedback">
-                        Пожалуйста, укажите вашу почту.
-                    </div>
-                </div>
-                <div class="mb-6">
-                    <label for="InputTel" class="form-label">Ваш контактный телефон</label>
-                    <input type="tel" name="tel" class="form-control" id="InputTel" data-valid="0"/>
-                    <div class="valid-feedback">
-                        ok
-                    </div>
-                    <div class="invalid-feedback">
-                        Пожалуйста, укажите вашу почту.
-                    </div>
-                </div>
-                <div class="mb-6">
-                    <label for="Textarea" class="form-label">Дополнительная информация</label>
-                    <textarea class="form-control" name="body" id="Textarea" rows="3" data-valid="0" placeholder="Например: уточнение по параметрам кухни, или необходимости индивидуального расчета" required></textarea>
-                </div>
-                <input type="hidden" class="sumForm" name="sumForm" value="0"/>
-                <input type="hidden"  name="kitchenConfigurations" value="Default" />
-                <button type="submit" class="btn btn-primary btn-submit" disabled>Отправить</button>
+                <button type="submit" class="btn btn-primary btn-submit btn btn-sm" disabled>Отправить</button>
             </form>
         </section>
         <div class="modal" tabindex="-1">
@@ -291,7 +304,7 @@
 
                     </div>
                     <div class="bg-warning">
-                        <p>Окончательная стоимость заказа оговаривается
+                        <p>Окончательная стоимость заказа обговаривается
                         при заключении договора.
                         Стоимость указанная в расчете калькулятора не является окончательной.</p>
                     </div>
@@ -299,19 +312,19 @@
             </div>
         </div>
         <div class="card p-0 m-0">
-            <h1>Други предложения</h1>
-            <div class="owl-carousel owl-theme owl-loaded side">
+            <h3 class="text-center">Другие предложения</h3>
+            <div class="owl-carousel owl-theme owl-loaded side ">
                 <div class="owl-stage-outer">
                     <div class="owl-stage">
                         @foreach($offers as $offer)
-                        <div class="owl-item">
+                        <div class="owl-item col">
                             <img src="{{asset(json_decode($offer['image'])[0])}}" height="300" class="card-img-top" alt="шкаф на заказ компания-тема">
                             <div class="card-body d-flex justify-content-center">
-                                <h2>{{$offer['meta_title']}}</h2>
+                                <p>{{$offer['meta_title']}}</p>
                                 <div class="btn-group">
-                                    <h2>
+
                                         <span style="color: darkred">Цена:</span> <b>{{$offer['price']}}</b>
-                                    </h2>
+
                                     <a href="/catalog/{{$offer['article']}}" class="btn btn-sm btn-outline-secondary">Посмотреть</a>
                                 </div>
                             </div>

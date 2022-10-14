@@ -21,15 +21,13 @@
     <body class="container-fluid p-0 m-0">
         @include('header')
 
-        <section>
+        <section style="min-height: 60vh; margin-top: 20px">
             @foreach($details as $detail)
             <div class="bg-light">
-                <h2>Имя и контактный телефон заказчика</h2>
-                <h3>{{$detail->name}}</h3>
+                <h2>Имя и контактный телефон заказчика: {{$detail->name}}</h2>
             </div>
                 <div>
-                    <h2>email:</h2>
-                    <h3>{{$detail->userEmail}}</h3>
+                    <h2>email:{{$detail->userEmail}}</h2>
                 </div>
                 @foreach($parametrs as $param)
                 <div>
@@ -46,5 +44,6 @@
                 </div>
             @endforeach
         </section>
+
         @extends('footer')
     </body>

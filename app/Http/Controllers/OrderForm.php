@@ -70,6 +70,9 @@ class OrderForm extends Controller
         $order = DB::table('orders')->where('id',$id)->get();
 
         $arr = [
+            'article' => 'Артикул',
+            'meta_title'=>'Название',
+            'category'=>'Категория',
             'facadesPrice'=>'Цена фасадов',
             'lengthBottleMaker'=>'Длинна Бутылошницы',
             'countBottleMaker'=>'количество бутылошниц',

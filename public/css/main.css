@@ -1,3 +1,12 @@
+body h1{
+    margin-top: 18px;
+    margin-bottom: 18px;
+    color: #141619;
+
+}
+
+
+
 .blur img{
     filter: blur(0px);
     min-height: 600px;
