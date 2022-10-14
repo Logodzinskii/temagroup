@@ -214,18 +214,19 @@
                                     <li>{{$offer[0]['options']}}</li>
                                 </ul>
                             </div>
-                            <div style="border-bottom: solid grey 1px;">
-                                <h2>
-                                    <span style="color: darkred">Цена:</span> <b>{{$offer[0]['price']}}</b> р.
-                                </h2>
-                            </div>
-                            <h2>Дополнительная оплата</h2>
+                            <h2>Услуги</h2>
                             <div>
                                 <ul class="row d-flex">
                                     <li>Доставка: {{$offer[0]['delivery_price']}}</li>
                                     <li>Сборка: {{$offer[0]['installation_price']}}</li>
                                 </ul>
                             </div>
+                            <div style="border-bottom: solid grey 1px;">
+                                <h2>
+                                    <span style="color: darkred">Цена:</span> <b>{{$offer[0]['price']}}</b> р.
+                                </h2>
+                            </div>
+
                             <h2>Проект в формате pdf</h2>
                             <ul class="row d-flex">
                                 <li><a href="/public/prices/{{$offer[0]['article']}}/{{$offer[0]['file']}}" download="filename">Скачать</a></li>
@@ -325,7 +326,7 @@
 
                                         <span style="color: darkred">Цена:</span> <b>{{$offer['price']}}</b>
 
-                                    <a href="/catalog/{{$offer['article']}}" class="btn btn-sm btn-outline-secondary">Посмотреть</a>
+                                    <a href="/catalog/{{$offer['article']}}" class="btn btn-sm btn-outline-secondary m-1">Посмотреть</a>
                                 </div>
                             </div>
                         </div>

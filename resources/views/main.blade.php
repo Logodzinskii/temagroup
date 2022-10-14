@@ -257,7 +257,7 @@
                                         <h2>
                                             <span style="color: darkred">Цена:</span> <b>{{$cat['price']}}</b>
                                         </h2>
-                                        <a href="/catalog/{{$cat['article']}}" class="btn btn-sm btn-outline-secondary">Посмотреть</a>
+                                        <a href="/catalog/{{$cat['article']}}" class="btn btn-sm btn-outline-secondary m-1">Посмотреть</a>
                                     </div>
                                 </div>
                             </div>
