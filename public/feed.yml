@@ -1,0 +1,79 @@
+  <?xml version="1.0" encoding="UTF-8"?>
+    <yml_catalog date="2022-10-15T10:37:38+03:00">
+    <shop>
+    <name>Компания-тема.рф</name>
+    <company>Компания-тема.рф</company>
+    <url>https://xn----7sbbtnkoefhm4b9l.xn--p1ai/</url>
+    <categories>
+    <category id="1">Модульные кухни</category>
+    </categories>
+    <delivery-options>
+    <option cost="3500" days="14"/>
+    </delivery-options>
+    <offers>
+    <offer id="202201">
+    <name>Кухня "Жемчужина"</name>
+    <url>https://xn----7sbbtnkoefhm4b9l.xn--p1ai/catalog/202201</url>
+    <price>244850</price>
+    <enable_auto_discounts>false</enable_auto_discounts>
+    <currencyId>RUR</currencyId>
+    <categoryId>1</categoryId>
+    <picture>https://xn----7sbbtnkoefhm4b9l.xn--p1ai/images/projects/202201/0002.png</picture>
+    <description>
+    <![CDATA[
+    <p>Длинна кухни 3750 мм; Высота кухни 2800 мм; Высота нижних модулей 910 мм.</p>
+    <p>Светодиодная лента; Столешница постформинг; Глянцевые фасады Eterno.</p>
+    ]]>
+    </description>
+    <sales_notes>Необходима предоплата.</sales_notes>
+    <manufacturer_warranty>false</manufacturer_warranty>
+    <dimensions>3750/2800/910</dimensions>
+    <condition type="preowned">
+    <quality>excellent</quality>
+    </condition>
+    </offer>
+    <offer id="202202">
+    <name>Кухня "Бриз"</name>
+    <url>https://xn----7sbbtnkoefhm4b9l.xn--p1ai/catalog/202202</url>
+    <price>244850</price>
+    <enable_auto_discounts>false</enable_auto_discounts>
+    <currencyId>RUR</currencyId>
+    <categoryId>1</categoryId>
+    <picture>https://xn----7sbbtnkoefhm4b9l.xn--p1ai/images/projects/202202/0003.png</picture>
+    <description>
+    <![CDATA[
+    <p>Длинна кухни 3460 мм; Высота кухни 2500 мм;</p>
+    <p>Столешница постформинг;</p>
+    ]]>
+    </description>
+    <sales_notes>Необходима предоплата.</sales_notes>
+    <manufacturer_warranty>false</manufacturer_warranty>
+    <dimensions>3460/2500/910</dimensions>
+    <condition type="preowned">
+    <quality>excellent</quality>
+    </condition>
+    </offer>
+    <offer id="202203">
+    <name>Кухня "Бар"</name>
+    <url>https://xn----7sbbtnkoefhm4b9l.xn--p1ai/catalog/202203</url>
+    <price>244850</price>
+    <enable_auto_discounts>false</enable_auto_discounts>
+    <currencyId>RUR</currencyId>
+    <categoryId>1</categoryId>
+    <picture>https://xn----7sbbtnkoefhm4b9l.xn--p1ai/images/projects/202203/0002.png</picture>
+    <description>
+    <![CDATA[
+    <p>Длинна 3700 мм (сторона А); Длинна 2750 мм (сторона Б); Высота 2500 мм;</p>
+  <p>Фасады пластик: Mattelux/ Eterno; Фурнитура BLUM; Столешница в комплектацию не входит; Интегрированные ручки Schuc</p>
+  ]]>
+    </description>
+    <sales_notes>Необходима предоплата.</sales_notes>
+    <manufacturer_warranty>false</manufacturer_warranty>
+    <dimensions>3700/2500/910</dimensions>
+    <condition type="preowned">
+    <quality>excellent</quality>
+    </condition>
+    </offer>
+    </offers>
+    </shop>
+    </yml_catalog>

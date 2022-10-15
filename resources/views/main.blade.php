@@ -181,9 +181,9 @@
     </head>
     <body class="container-fluid p-0 m-0">
         @include('header')
-        <div class="owl-carousel owl-theme owl-loaded side" style="min-height: 85vh">
+        <div class="owl-carousel owl-theme owl-loaded side" >
             <div class="owl-stage-outer">
-                <div class="owl-stage blur">
+                <div class="owl-stage main-slider">
                    <div class="owl-item slider-card">
                        <img src="images/main/kitchen_1_main.jpg"  class="card-img-top" alt="шкаф на заказ компания-тема">
                             <h1 class="text-center text-white">КОМПАНИЯ-ТЕМА</h1>
