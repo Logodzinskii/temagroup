@@ -147,7 +147,8 @@ class OrderForm extends Controller
 
     public function checkOrderLink($code)
     {
-        $orders = Orders::where('status', $code)->get();
-        return view('mail/confirm', ['result'=>$orders->email]);
+        $orders = Orders::where('status', $code)
+            ->get();
+        return ['result'=>'200'];
     }
 }

@@ -70,4 +70,6 @@ Route::get('/contacts/', function () {
 
 });
 
-Route::get('/access/to/order/{code}',[OrderForm::class, 'checkOrderLink']);
+Route::get('/access/to/order/{code}', function () {
+    return redirect('/');
+});
