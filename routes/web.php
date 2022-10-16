@@ -54,6 +54,7 @@ Route::delete('/admin/offers/edit/', [\App\Http\Controllers\CatalogController::c
 Route::put('/admin/offers/edit/', [\App\Http\Controllers\CatalogController::class, 'updateOffer'])->middleware('auth');
 Route::get('/admin/offer/add/', [\App\Http\Controllers\CatalogController::class, 'formAddOffer'])->middleware('auth');
 Route::get('/admin/offer/add/{article}', [\App\Http\Controllers\CatalogController::class, 'formUpdateOffer'])->middleware('auth');
+
 /**
  * Маршрут для контента страницы
  */
@@ -68,3 +69,5 @@ Route::get('/contacts/', function () {
     return view('contacts');
 
 });
+
+Route::get('/access/to/order/{code}',[OrderForm::class, 'checkOrderLink']);

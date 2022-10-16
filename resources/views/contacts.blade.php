@@ -138,6 +138,74 @@
                 </div>
             </div>
         </section>
+        <section>
+            <table class="table p-0 col-8">
+                <thead>
+                <tr>
+                    <th scope="col">Реквизиты</th>
+                    <th scope="col">Наименование</th>
+                </tr>
+                </thead>
+                <tbody class="tableValue">
+                <tr>
+                    <th scope="row">
+                        ОГРНИП
+                    </th>
+                    <td>
+                        321665800062794
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        ИНН
+                    </th>
+                    <td>
+                        665801679557
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        Вид предпринимательства
+                    </th>
+                    <td>
+                        Индивидуальный предприниматель
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        Дата регистрации
+                    </th>
+                    <td>
+                        9 апреля 2021 г.
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        Регистратор
+                    </th>
+                    <td>
+                        Инспекция Федеральной налоговой службы по Верх-Исетскому району г.Екатеринбурга
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        Дата постановки на учёт
+                    </th>
+                    <td>
+                        9 апреля 2021 г.
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        Наименование налогового органа
+                    </th>
+                    <td>
+                        Инспекция ФНС России по Верх-Исетскому району г.Екатеринбурга
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
         <section class="p-0 m-0">
             <div style="width: 100%; min-height: 60vh; height: 40vh">
                 <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A395b067a3d72aa073ffcc90b7b9499c9b026103127768924ab33ed363660d196&amp;max-width=50%;height=100%;lang=ru_RU&amp;scroll=false"></script>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Orders;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 
 class OrderForm extends Controller
@@ -25,9 +26,9 @@ class OrderForm extends Controller
 
         $order->userEmail = $request->email;
         $order->name = $request->firstname . '|' . $request->tel;
-
         $order->totalPrice = $request->sumForm;
-        $order->status = 'new';
+        $code = password_hash($request->firstname . $request->email . date("h:i:sa"), PASSWORD_DEFAULT);
+        $order->status = $code;
 
         /**
 
@@ -40,6 +41,24 @@ class OrderForm extends Controller
               $parametrs[] = [$key => $value];
           }
           $order->kitchenConfigurations = json_encode($parametrs);
+
+        /**
+         * send email
+         */
+        $to_name = $request->firstname;
+        $to_email = $request->email;
+
+        $body = [
+            'name'=> $request->firstname,
+            'sub' => 'Вы получили это сообщение, так как оформили заказ на сайте. Для подтверждения заказа перейдите по ссылке',
+            'web'=>'https://компания-тема.рф',
+            'link'=> 'https://компания-тема.рф/access/to/order/'.$code,
+        ];
+        $data = ['body' => $body];
+        Mail::send('mail/emails', $data, function($message) use ($to_name, $to_email) {
+            $message->to($to_email, $to_name)->subject('Подтверждение заказа');
+            $message->from('chelae1@mail.ru','Компания-тема');
+        });
 
       //601768998
       //645879928
@@ -124,5 +143,11 @@ class OrderForm extends Controller
         //file_put_contents('test.log', print_r($arr));
 
         return view('details/details', ['details' => $order , 'parametrs' => $res]);
+    }
+
+    public function checkOrderLink($code)
+    {
+        $orders = Orders::where('status', $code)->get();
+        return view('mail/confirm', ['result'=>$orders->email]);
     }
 }
