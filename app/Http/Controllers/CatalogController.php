@@ -5,15 +5,33 @@ namespace App\Http\Controllers;
 use App\Models\Catalog;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use Symfony\Component\HttpFoundation\File\File;
 
 class CatalogController extends Controller
 {
+    protected string $status;
+
+    protected function isAdmin()
+    {
+        $user = Auth::user();
+
+        if($user['status'] === 'admin')
+        {
+
+            $this->status = $user['status'];
+
+        }else{
+
+            $this->status = 'none';
+        }
+    }
 
     public function index()
     {
+
         $catalog = Catalog::all();
 
         return view('main', ['catalog' => $catalog]);
@@ -26,6 +44,9 @@ class CatalogController extends Controller
 
     public function create(Request $request)
     {
+        self::isAdmin();
+        if ($this->status === 'admin' )
+        {
         if($request->hasFile('image'))
         {
             $paths =[];
@@ -65,11 +86,18 @@ class CatalogController extends Controller
             $offer->status= $request->status;
             $offer->save();
         return \redirect('/admin/offers/edit/');
+        }else
+        {
+            return view('404');
+        }
 
     }
 
     public function deleteOffer(Request $request)
     {
+        self::isAdmin();
+        if ($this->status === 'admin' )
+        {
         $path = Catalog::where('id',$request->id)
             ->get();
         $delPath = 'images/projects/'.$path[0]['article'];
@@ -79,10 +107,17 @@ class CatalogController extends Controller
         \Illuminate\Support\Facades\File::deleteDirectory($delPathPrices);
         Catalog::find($request->id)->delete();
         return [$path[0]['article']];
+        }else
+        {
+            return view('404');
+        }
     }
 
     public function updateOffer(Request $request)
     {
+        self::isAdmin();
+        if ($this->status === 'admin' )
+        {
         $offer=Catalog::where('article',$request->article)
             ->get();
         if($request->hasFile('image'))
@@ -138,22 +173,46 @@ class CatalogController extends Controller
                 ]);
 
         return \redirect('/admin/offers/edit/');
+        }else
+        {
+            return view('404');
+        }
     }
 
     public function listOffers()
     {
+        self::isAdmin();
+        if ($this->status === 'admin' )
+        {
         return view('admin/adminOffers', ['offers'=>Catalog::all()]);
+        }else
+        {
+            return view('404');
+        }
     }
 
     public function formAddOffer()
     {
-
+        self::isAdmin();
+        if ($this->status === 'admin' )
+        {
         return view('admin/offers/adminFormAdd');
+        }else
+        {
+            return view('404');
+        }
     }
 
     public function formUpdateOffer($article)
     {
+        self::isAdmin();
+        if ($this->status === 'admin' )
+        {
         return view('admin/offers/adminFormUpdate',['catalog'=>Catalog::where('article', $article)->get()]);
+        }else
+        {
+            return view('404');
+        }
     }
 
     public function downloadOffer()
