@@ -8,6 +8,7 @@ use App\Http\Controllers\OrderForm;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\UsersControllers;
 use App\Http\Controllers\UsersOrders;
+use App\Http\Controllers\ControllerYml;
 
 /*
 |--------------------------------------------------------------------------
@@ -67,10 +68,8 @@ Route::get('/catalog/{article}', [\App\Http\Controllers\CatalogController::class
 Route::get('/calculate/{model}', [CalculateContentController::class, 'showKitchen']);
 Route::get('/contacts/', function () {
     return view('contacts');
-
 });
 
-Route::get('/access/to/order/{code}', function () {
+Route::get('/access/to/order/{code}', [OrderForm::class, 'showDetailOrder']);
 
-    return redirect('/');
-});
+Route::get('/yml/',[ControllerYml::class, 'createYml']);
