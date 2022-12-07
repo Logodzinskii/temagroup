@@ -11,12 +11,11 @@
         <link rel="stylesheet" href={{ asset('css/owl.carousel.min.css') }}>
         <link rel="stylesheet" href={{ asset('css/owl.theme.default.min.css') }}>
         <link rel="stylesheet" href={{ asset('css/main.css') }}>
-        <link rel="stylesheet" href={{ asset('css/bootstrap.min.css') }}>
+        <link rel="stylesheet" href={{ asset('css/bootstrap.css') }}>
         <script src="{{asset('js/bootstrap.bundle.js')}}"></script>
         <script src={{ asset('js/owl.carousel.min.js')}}></script>
 
         <script type="text/javascript">
-
         $(document).ready(function(){
 
             $('input[name=firstname]').bind('input',function(){
@@ -114,10 +113,10 @@
                             items:1
                         },
                         600:{
-                            items:1
+                            items:3
                         },
                         1000:{
-                            items:1
+                            items:3
                         }
                     }
                 }
@@ -181,23 +180,10 @@
     </head>
     <body class="container-fluid p-0 m-0">
         @include('header')
-        <div class="owl-carousel owl-theme owl-loaded side" >
-            <div class="owl-stage-outer">
-                <div class="owl-stage main-slider">
-                   <div class="owl-item slider-card">
-                       <img src="images/main/kitchen_1_main.jpg"  class="card-img-top" alt="шкаф на заказ компания-тема">
-                            <h1 class="text-center text-white">КОМПАНИЯ-ТЕМА</h1>
-                                <div class="info-block">
-                                    <p>Изготовим корпусную мебель</p>
-                                    <p>Сделаем замеры</p>
-                                    <p>Учтем все детали</p>
-                                    <p>Произведем доставку</p>
-                                    <p>Сделаем монтаж</p>
-                                </div>
-                   </div>
-                </div>
-            </div>
-        </div>
+        @include('ElemetsMainPage/indexSection')
+        @include('ElemetsMainPage/portfolio')
+        @include('ElemetsMainPage/visualSection')
+        @include('ElemetsMainPage/offersSection')
         <div class="card p-0 m-0">
             <h1 class="text-center">Мы изготавливаем различную мебель</h1>
             <div class="owl-carousel owl-theme owl-loaded side">
@@ -225,63 +211,7 @@
                 </div>
             </div>
         </div>
-        <h1 class="text-center">Делаем визуализацию проекта</h1>
-        <div class="container">
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-2" >
-                <div class="col info-block">
-                    <p class="text-center bg-light">РЕАЛИСТИЧНАЯ КАРТИНКА, БУДУЩЕЙ МЕБЕЛИ!</p>
-                    <p>Проработаем дизайн проект до мелочей</p>
-                    <p>Подстроимся под любые размеры</p>
-                    <p>Предложим альтернативу</p>
-                </div>
-                <video class="col" controls autoplay width="100%" height="400">
-                    <source src="{{asset('video/videoplayback.mp4')}}"  type="video/mp4" controls width="250">
-                </video>
-            </div>
-        </div>
 
-        <section class="m-3">
-            @if(count($catalog) > 0)
-            <h1 class="text-center">Готовые решения</h1>
-            @endif
-            <div class="container">
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                    @foreach($catalog as $cat)
-                    <div class="col">
-                        <div class="card shadow-sm">
-                           <img src="{{json_decode($cat['image'], true)[0]}}" alt="компания-тема кухня">
-                            <div class="card-body">
-                                <p class="card-text">{{$cat['meta_descriptions']}}</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <h2>
-                                            <span style="color: darkred">Цена:</span> <b>{{$cat['price']}}</b>
-                                        </h2>
-                                        <a href="/catalog/{{$cat['article']}}" class="btn btn-sm btn-outline-secondary m-1">Посмотреть</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    @endforeach
-
-                </div>
-            </div>
-        </section>
-        <section class="bg-dark">
-            <h1 class="text-white text-center">Фотографии готовых работ</h1>
-            <div class="owl-carousel owl-theme owl-loaded side" style="min-height: 100vh">
-                <div class="owl-stage-outer">
-                    <div class="owl-stage blur">
-                        @for ($i = 1; $i <= 11; $i++)
-                            <div class="owl-item">
-                                <img src="{{asset('images/resoultProject/'. $i . '.jpg')}}"/>
-                            </div>
-                        @endfor
-                    </div>
-                </div>
-            </div>
-        </section>
         <section class="bg-light">
             <h1 class="text-center">Сотрудничаем только с проверенными поставщиками фурнитуры и комплектующих</h1>
             <div class="owl-carousel owl-theme owl-loaded side d-flex align-items-center" style="min-height: 50vh">

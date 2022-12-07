@@ -25,6 +25,7 @@ class Catalog extends Model
         'delivery_day',
         'installation_price',
         'status',
+        'chpu',
     ];
 
 }
