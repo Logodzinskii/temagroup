@@ -184,6 +184,7 @@
         @include('ElemetsMainPage/portfolio')
         @include('ElemetsMainPage/visualSection')
         @include('ElemetsMainPage/offersSection')
+        @include('ElemetsMainPage/infoSection')
         <div class="card p-0 m-0">
             <h1 class="text-center">Мы изготавливаем различную мебель</h1>
             <div class="owl-carousel owl-theme owl-loaded side">
