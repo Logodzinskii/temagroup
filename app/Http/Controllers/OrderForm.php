@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Orders;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
@@ -29,9 +30,20 @@ class OrderForm extends Controller
         $order->totalPrice = $request->sumForm;
         $code = password_hash($request->firstname . $request->email . date("h:i:sa"), PASSWORD_DEFAULT);
         $order->status = $code;
+        /**
+         * Добавлю пользователя в базу данных
+         */
+        $user = new User();
+
+        $user->name = $request->firstname;
+        $user->email = $request->email;
+        $user->status = 'users';
+        $user->email_verified_at = NULL;
+        $user->password = password_hash($request->firstname . $request->tel . date("h:i:sa"), PASSWORD_DEFAULT);
+        $user->remember_token = NULL;
+        $user->save();
 
         /**
-
          * Все выбранные параметры кухни, внесем в таблицу orders в колонку в виде json
          */
 
@@ -82,11 +94,11 @@ class OrderForm extends Controller
         return response()->json(['success'=>'ok']);
     }
 
-    public function showDetailOrder($id)
+    public function showDetailOrder($code)
     {
         $arrForm=[];
 
-        $order = DB::table('orders')->where('id',$id)->get();
+        $order = DB::table('orders')->where('status',$code)->get();
 
         $arr = [
             'article' => 'Артикул',

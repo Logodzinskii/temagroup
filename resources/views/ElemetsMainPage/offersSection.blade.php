@@ -5,7 +5,6 @@
     <div class="container top-bottom-50">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 d-flex justify-content-between" >
             @foreach($catalog as $cat)
-
                     <div class="owl-item text-white " style="position: relative">
                         <div class="">
                             <img src="{{json_decode($cat['image'], true)[0]}}" alt="компания-тема кухня">
