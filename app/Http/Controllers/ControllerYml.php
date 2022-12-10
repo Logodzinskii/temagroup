@@ -36,7 +36,7 @@ class ControllerYml extends Controller
 
 
         $out .= '<categories>' . "\r\n";
-        $out .= '<category id="2731707003">Товары в наличии</category>' . "\r\n";
+        $out .= '<category id="0001">Товары на заказ</category>' . "\r\n";
 
         $out .= '</categories>' . "\r\n";
 
@@ -48,7 +48,7 @@ class ControllerYml extends Controller
             $out .= '<offer id="' . $row['id'] . '">' . "\r\n";
 
             // URL страницы товара на сайте магазина
-            $out .= '<url>'. $_SERVER['REQUEST_SCHEME']. '://' .$_SERVER['HTTP_HOST']. '/catalog/'. $row['article'] . '</url>' . "\r\n";
+            $out .= '<url>'. $_SERVER['REQUEST_SCHEME']. '://' .$_SERVER['HTTP_HOST']. '/catalog/'. $row['chpu'] . '</url>' . "\r\n";
 
             $out .= '<price>' . $row['price'] . '</price>' . "\r\n";
 
@@ -57,7 +57,7 @@ class ControllerYml extends Controller
             $out .= '<currencyId>RUR</currencyId>' . "\r\n";
 
             // ID категории
-            $out .= '<categoryId>2731707003</categoryId>' . "\r\n";
+            $out .= '<categoryId>'. $row['id']. '</categoryId>' . "\r\n";
 
             // Изображения товара, до 10 ссылок
             $img = json_decode($row['image'], true);
@@ -77,5 +77,35 @@ class ControllerYml extends Controller
 
         header('Content-Type: text/xml; charset=utf-8');
         file_put_contents('test.xml',$out);
+        file_put_contents('feed_01.xml',$out);
     }
+
+    public function createSiteMap()
+    {
+        /**
+         * Постоянная часть не входит в цикл
+         */
+        $out = '<?xml version="1.0" encoding="UTF-8"?>' . "\r\n";
+        $out .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\r\n";
+        /**
+         * @param $link string, адрес страницы от корневого
+         *
+         * Ссылки, тэг <priority> 1.0 присваивается главной страницы, остальные о 0.9 до 0.1
+         */
+        $link = '/';
+
+        $out .= '<url>'. "\r\n";
+        $out .= '<loc>'. $_SERVER['REQUEST_SCHEME']. '://' .$_SERVER['HTTP_HOST']. '/'. $link . '</loc>' . "\r\n";
+        $out .= '<lastmod>'. date('Y-m-d H:i') .'</lastmod>';
+        $out .= '<priority>1.0</priority>';
+        $out .= '</url>';
+        $out .= '</urlset>';
+        /**
+         * Сохраним sitemap.xml public
+         */
+        header('Content-Type: text/xml; charset=utf-8');
+        file_put_contents('sitemap.xml',$out);
+    }
+
 }
+

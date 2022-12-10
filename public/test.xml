@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<yml_catalog date="2022-12-07 16:18">
+<shop>
+<name>xn----7sbbtnkoefhm4b9l.xn--p1ai</name>
+<company>xn----7sbbtnkoefhm4b9l.xn--p1ai</company>
+<url>https://xn----7sbbtnkoefhm4b9l.xn--p1ai/</url>
+<currencies>
+<currency id="RUR" rate="1"/>
+</currencies>
+<categories>
+<category id="0001">Товары на заказ</category>
+</categories>
+<offers>
+<offer id="18">
+<url>http://temagroup.local/catalog/kuhnya-shtorm</url>
+<price>250000</price>
+<currencyId>RUR</currencyId>
+<categoryId>18</categoryId>
+<picture>http://temagroup.local/images/projects/202201/0001.png</picture>
+<name>Test</name>
+<description><![CDATA[Кухонный гарнитур "Шторм" купить в Екатеринбурге]]></description>
+</offer>
+<offer id="20">
+<url>http://temagroup.local/catalog/zhk-ekaterininskij-park</url>
+<price>250000</price>
+<currencyId>RUR</currencyId>
+<categoryId>20</categoryId>
+<picture>http://temagroup.local/images/projects/202204/9.jpg</picture>
+<name>ЖК «Екатерининский Парк»</name>
+<description><![CDATA[Кухонный гарнитур "Жемчужина" купить в Екатеринбурге]]></description>
+</offer>
+<offer id="21">
+<url>http://temagroup.local/catalog/zhk-avrora</url>
+<price>234000</price>
+<currencyId>RUR</currencyId>
+<categoryId>21</categoryId>
+<picture>http://temagroup.local/images/projects/202203/_1.jpg</picture>
+<name>ЖК "Аврора"</name>
+<description><![CDATA[ЖК "Аврора"]]></description>
+</offer>
+</offers>
+</shop>
+</yml_catalog>

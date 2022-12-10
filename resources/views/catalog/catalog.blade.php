@@ -342,7 +342,7 @@
 
                                         <span style="color: darkred">Цена:</span> <b>{{$offer['price']}}</b>
 
-                                    <a href="/catalog/{{$offer['article']}}" class="btn btn-sm btn-outline-secondary m-1">Посмотреть</a>
+                                    <a href="/catalog/{{$offer['chpu']}}" class="btn btn-sm btn-outline-secondary m-1">Посмотреть</a>
                                 </div>
                             </div>
                         </div>
