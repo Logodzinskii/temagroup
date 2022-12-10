@@ -13,7 +13,7 @@
         </div>
     </div>
     <div class="container-fluid d-flex justify-content-center bg-light ">
-        <div class="btn btn-outline-secondary w-50" style="margin: 50px 0 50px 0">
+        <div class="btn btn-outline-secondary col-12 col-sm-12 col-md-6 " style="margin: 50px 0 50px 0">
             ПОСМОТРЕТЬ РАБОТЫ
             <div class="btn-outline-secondary-inners"></div>
         </div>

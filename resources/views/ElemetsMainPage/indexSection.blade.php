@@ -8,7 +8,7 @@
             <li>МЕБЕЛЬ В ВАННУЮ</li>
         </ul>
         <a href="#form">
-        <div class="btn btn-outline-primary w-50">
+        <div class="btn btn-outline-primary col-12 col-sm-12 col-md-6 ">
             ЗАПИСАТЬСЯ НА ЗАМЕР
             <div class="btn-outline-primary-inners"></div>
         </div>
