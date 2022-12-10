@@ -1,3 +1,6 @@
+.main-menu-text{
+    letter-spacing: 0.6em;
+}
 .main-slider img{
     height: 85vh;
     object-fit: cover;

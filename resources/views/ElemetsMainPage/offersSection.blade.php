@@ -14,14 +14,16 @@
                             <div class="d-flex justify-content-between " >
                                 <div class="d-flex justify-content-center container align-items-end flex-wrap" style="height: 100%">
                                     <h2 class="row" style="width: 100%; margin-bottom: 5vh">
-                                       <span class="text-center">{{$cat['price']}}</span>
+                                       <span class="text-center">{{$cat['price']}} &#8381;</span>
                                     </h2>
+                                    <a href="/catalog/{{$cat['chpu']}}">
                                     <div class="row btn btn-outline-primary">
-                                        <a href="/catalog/{{$cat['chpu']}}">
+
                                             ПОДРОБНЕЕ
-                                        </a>
+
                                         <div class="btn-outline-primary-inners"></div>
                                     </div>
+                                    </a>
                                 </div>
                             </div>
                         </div>
