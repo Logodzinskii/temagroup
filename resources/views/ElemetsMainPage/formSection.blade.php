@@ -39,7 +39,7 @@
         </div>
         <input type="hidden" class="sumForm" name="sumForm" value="0"/>
         <input type="hidden"  name="kitchenConfigurations" value="Default" />
-        <button type="submit" class="btn btn-outline-secondary btn-submit" disabled>
+        <button type="submit" class="btn btn-outline-secondary btn-submit col-10 col-sm-10 col-md-6 " disabled>
             Отправить
             <div class="btn-outline-secondary-inners"></div>
         </button>
