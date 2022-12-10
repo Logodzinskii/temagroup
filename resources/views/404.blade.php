@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container d-flex justify-content-center align-items-center">
-   <div>
+   <div class="col-12 text-center">
        Страница не найдена или у вас нет доступа.
    </div>
 </div>
