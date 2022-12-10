@@ -187,6 +187,6 @@
         @include('ElemetsMainPage/infoSection')
         @include('ElemetsMainPage/deliverySection')
         @include('ElemetsMainPage/checkSection')
-        @include('ElemetsMainPage/FormSection')
+        @include('ElemetsMainPage/formSection')
         @extends('footer')
     </body>
