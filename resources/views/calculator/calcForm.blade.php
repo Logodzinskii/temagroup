@@ -11,6 +11,8 @@
         <link rel="stylesheet" href={{ asset('css/owl.carousel.min.css') }}>
         <link rel="stylesheet" href={{ asset('css/owl.theme.default.min.css') }}>
         <link rel="stylesheet" href={{ asset('css/calcv2.css') }}>
+    <link rel="stylesheet" href={{ asset('css/main.css') }}>
+    <link rel="stylesheet" href={{ asset('css/bootstrap.css') }}>
         <script src="{{asset('js/bootstrap.bundle.js')}}"></script>
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript" >
@@ -652,8 +654,6 @@
 
 
     </script>
-            <link rel="stylesheet" href={{ asset('css/bootstrap.min.css') }}>
-
     </head>
     <body class="container-fluid p-0 m-0">
         @include('header')

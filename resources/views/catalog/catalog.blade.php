@@ -11,7 +11,7 @@
         <link rel="stylesheet" href={{ asset('css/owl.carousel.min.css') }}>
         <link rel="stylesheet" href={{ asset('css/owl.theme.default.min.css') }}>
         <link rel="stylesheet" href={{ asset('css/main.css') }}>
-        <link rel="stylesheet" href={{ asset('css/bootstrap.min.css') }}>
+        <link rel="stylesheet" href={{ asset('css/bootstrap.css') }}>
         <script src="{{asset('js/bootstrap.bundle.js')}}"></script>
         <script src={{ asset('js/owl.carousel.min.js')}}></script>
 
@@ -183,9 +183,10 @@
         });
     </script>
     </head>
-    <body class="container-fluid p-0 m-0">
+    <body class="container-fluid p-0 m-0 row d-flex justify-content-center">
         @include('header')
-        <h1>{{$offer[0]['meta_title']}}</h1>
+        <div class="col-10">
+            <h1 class="title-section-dark">{{$offer[0]['meta_title']}}</h1>
             <div class="container" >
                 <div class=" row row-cols-1 row-cols-sm-2 row-cols-md-2 g-2">
                     <div class="col owl-carousel owl-theme owl-loaded "  >
@@ -193,7 +194,7 @@
                             <div class="owl-stage">
                                 @foreach(json_decode($offer[0]['image'],true) as $image)
                                     <div class="owl-item">
-                                        <div class="card" >
+                                        <div class="" >
                                             <div class="card_body">
                                                 <img src="{{asset($image)}}" alt=""/>
                                             </div>
@@ -203,7 +204,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col card">
+                    <div class="col p-3">
                         <div class="card-title">
                             <h1>Характеристики</h1>
                             <h3 style="color: grey">арт. {{$offer[0]['article']}}</h3>
@@ -240,116 +241,95 @@
                     </div>
                 </div>
             </div>
-        <div class="modal offer" tabindex="-1">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title ">Готовы сделать заказ?</h1>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <section class="modal-body p-0 m-0 d-flex justify-content-around align-items-start flex-wrap bg-dark text-white">
-                        <form class="container" id="orderForm">
-                            @csrf
-                            <h2 class="text-center">Отправьте заявку на расчет</h2>
-                            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-2 ">
-                                <input type="hidden" name="category" value="{{$offer[0]['category']}}">
-                                <input type="hidden" name="article" value="{{$offer[0]['article']}}">
-                                <input type="hidden" name="sumForm" value="{{$offer[0]['price']}}">
-                                <div class="col">
-                                    <div class="mb-6">
-                                        <label for="InputName" class="form-label">Ваше имя</label>
-                                        <input type="text" name="firstname" class="form-control" id="InputName" value="" data-valid="0" required>
-                                        <div class="valid-feedback">
-                                            ok
-                                        </div>
-                                        <div class="invalid-feedback">
-                                            Пожалуйста, сообщите ваше имя и фамилию.
-                                        </div>
-                                    </div>
-                                    <div class="mb-6">
-                                        <label for="InputEmail" class="form-label">Email для связи с вами</label>
-                                        <input type="email" name="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" data-valid="0" required>
-                                        <div class="valid-feedback">
-                                            ok
-                                        </div>
-                                        <div class="invalid-feedback">
-                                            Пожалуйста, укажите вашу почту.
-                                        </div>
-                                    </div>
-                                    <div class="mb-6">
-                                        <label for="InputTel" class="form-label">Ваш контактный телефон</label>
-                                        <input type="tel" name="tel" class="form-control" id="InputTel" data-valid="0"/>
-                                        <div class="valid-feedback">
-                                            ok
-                                        </div>
-                                        <div class="invalid-feedback">
-                                            Пожалуйста, укажите вашу почту.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="mb-6">
-                                        <label for="Textarea" class="form-label">Дополнительная информация</label>
-                                        <textarea class="form-control" name="body" id="Textarea" rows="7" data-valid="0" placeholder="Например: уточнение по параметрам кухни, или необходимости индивидуального расчета" required></textarea>
-                                    </div>
-                                    <input type="hidden"  name="kitchenConfigurations" value="{{$offer[0]['meta_title']}}" />
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="submit" class="btn btn-primary btn-submit btn btn-sm" disabled>Оформить заказ</button>
-                            </div>
-                        </form>
-                    </section>
-                </div>
-            </div>
-        </div>
-        <div class="modal" tabindex="-1">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Сообщение</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body bg-success text-white">
-
-                        <p>Благодарим за ваше обращение в нашу компанию. </p>
-                        <p>Мы свяжемся с вами для уточнения заказа.</p>
-
-                    </div>
-                    <div class="bg-warning">
-                        <p>Окончательная стоимость заказа обговаривается
-                        при заключении договора.
-                        Стоимость указанная в расчете калькулятора не является окончательной.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card p-0 m-0">
-            <h3 class="text-center">Другие предложения</h3>
-            <div class="owl-carousel owl-theme owl-loaded side ">
-                <div class="owl-stage-outer">
-                    <div class="owl-stage">
-                        @foreach($offers as $offer)
-                        <div class="owl-item col">
-                            <img src="{{asset(json_decode($offer['image'])[0])}}" height="300" class="card-img-top" alt="шкаф на заказ компания-тема">
-                            <div class="card-body d-flex justify-content-center">
-                                <p>{{$offer['meta_title']}}</p>
-                                <div class="btn-group">
-
-                                        <span style="color: darkred">Цена:</span> <b>{{$offer['price']}}</b>
-
-                                    <a href="/catalog/{{$offer['chpu']}}" class="btn btn-sm btn-outline-secondary m-1">Посмотреть</a>
-                                </div>
-                            </div>
+            <div class="modal offer" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title ">Готовы сделать заказ?</h1>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         </div>
-                        @endforeach
+                        <section class="modal-body p-0 m-0 d-flex justify-content-around align-items-start flex-wrap bg-dark text-white">
+                            <form class="container" id="orderForm">
+                                @csrf
+                                <h2 class="text-center">Отправьте заявку на расчет</h2>
+                                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-2 ">
+                                    <input type="hidden" name="category" value="{{$offer[0]['category']}}">
+                                    <input type="hidden" name="article" value="{{$offer[0]['article']}}">
+                                    <input type="hidden" name="sumForm" value="{{$offer[0]['price']}}">
+                                    <div class="col">
+                                        <div class="mb-6">
+                                            <label for="InputName" class="form-label">Ваше имя</label>
+                                            <input type="text" name="firstname" class="form-control" id="InputName" value="" data-valid="0" required>
+                                            <div class="valid-feedback">
+                                                ok
+                                            </div>
+                                            <div class="invalid-feedback">
+                                                Пожалуйста, сообщите ваше имя и фамилию.
+                                            </div>
+                                        </div>
+                                        <div class="mb-6">
+                                            <label for="InputEmail" class="form-label">Email для связи с вами</label>
+                                            <input type="email" name="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" data-valid="0" required>
+                                            <div class="valid-feedback">
+                                                ok
+                                            </div>
+                                            <div class="invalid-feedback">
+                                                Пожалуйста, укажите вашу почту.
+                                            </div>
+                                        </div>
+                                        <div class="mb-6">
+                                            <label for="InputTel" class="form-label">Ваш контактный телефон</label>
+                                            <input type="tel" name="tel" class="form-control" id="InputTel" data-valid="0"/>
+                                            <div class="valid-feedback">
+                                                ok
+                                            </div>
+                                            <div class="invalid-feedback">
+                                                Пожалуйста, укажите вашу почту.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="mb-6">
+                                            <label for="Textarea" class="form-label">Дополнительная информация</label>
+                                            <textarea class="form-control" name="body" id="Textarea" rows="7" data-valid="0" placeholder="Например: уточнение по параметрам кухни, или необходимости индивидуального расчета" required></textarea>
+                                        </div>
+                                        <input type="hidden"  name="kitchenConfigurations" value="{{$offer[0]['meta_title']}}" />
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-primary btn-submit btn btn-sm" disabled>Оформить заказ</button>
+                                </div>
+                            </form>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <div class="modal" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Сообщение</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body bg-success text-white">
+
+                            <p>Благодарим за ваше обращение в нашу компанию. </p>
+                            <p>Мы свяжемся с вами для уточнения заказа.</p>
+
+                        </div>
+                        <div class="bg-warning">
+                            <p>Окончательная стоимость заказа обговаривается
+                                при заключении договора.
+                                Стоимость указанная в расчете калькулятора не является окончательной.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
         @extends('footer')
     </body>

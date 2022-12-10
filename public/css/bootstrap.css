@@ -33,7 +33,7 @@
 }
 @font-face {
     font-family: 'franklingothic_demi';
-    src: url('../public/Fonts/franklingothic_demi.TTF');
+    src: url('/../public/Fonts/franklingothic_demi.ttf');
 }
 *,
 *::before,

@@ -11,8 +11,8 @@
         <link rel="stylesheet" href={{ asset('css/owl.carousel.min.css') }}>
         <link rel="stylesheet" href={{ asset('css/owl.theme.default.min.css') }}>
         <link rel="stylesheet" href="{{asset('css/calculate.css')}}">
-
-        <link rel="stylesheet" href={{ asset('css/bootstrap.min.css') }}>
+    <link rel="stylesheet" href={{ asset('css/main.css') }}>
+    <link rel="stylesheet" href={{ asset('css/bootstrap.css') }}>
         <script src="{{asset('js/bootstrap.bundle.js')}}"></script>
         <script type="text/javascript" src={{ asset('js/owl.carousel.min.js')}}></script>
         <script type="text/javascript" src="{{asset('js/calculate_slider.js')}}"></script>

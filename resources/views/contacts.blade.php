@@ -11,7 +11,7 @@
         <link rel="stylesheet" href={{ asset('css/owl.carousel.min.css') }}>
         <link rel="stylesheet" href={{ asset('css/owl.theme.default.min.css') }}>
         <link rel="stylesheet" href={{ asset('css/main.css') }}>
-        <link rel="stylesheet" href={{ asset('css/bootstrap.min.css') }}>
+        <link rel="stylesheet" href={{ asset('css/bootstrap.css') }}>
         <script src="{{asset('js/bootstrap.bundle.js')}}"></script>
         <script src={{ asset('js/owl.carousel.min.js')}}></script>
 
@@ -99,11 +99,11 @@
 
     </script>
     </head>
-    <body class="container-fluid p-0 m-0">
+    <body class="container-fluid row p-0 m-0 d-flex justify-content-center">
         @include('header')
-        <section class="d-flex row p-0 m-0">
-            <h1>Связаться с нами</h1>
-            <div class="container">
+        <section class="d-flex row p-0 m-0 text-body col-10" >
+            <h1 class="title-section-white">Связаться с нами</h1>
+            <div class="container " style="margin-bottom: 10vh" >
                 <div class="row">
                     <div class="col-3">
                         <img src="{{asset("images/logo/logo.png")}}" width="80">
@@ -123,7 +123,7 @@
                                     <path d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z"/>
                                     <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
                                 </svg>
-                                <a href=":tel"> +7 963 272 72 82</a>
+                                <a href=":tel" style="color: #2E2D30 !important;"> +7 963 272 72 82</a>
                             </div>
                         </div>
                         <div class="row">
@@ -131,14 +131,14 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
                                     <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
                                 </svg>
-                                <a href="mailto:temagroupekb@gmail.com">temagroupekb@gmail.com</a>
+                                <a href="mailto:temagroupekb@gmail.com" style="color: #2E2D30 !important;">temagroupekb@gmail.com</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section>
+        <section class="col-10">
             <table class="table p-0 col-8">
                 <thead>
                 <tr>
@@ -206,7 +206,7 @@
                 </tbody>
             </table>
         </section>
-        <section class="p-0 m-0">
+        <section class="p-0 m-0 col-10">
             <div style="width: 100%; min-height: 60vh; height: 40vh">
                 <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A395b067a3d72aa073ffcc90b7b9499c9b026103127768924ab33ed363660d196&amp;max-width=50%;height=100%;lang=ru_RU&amp;scroll=false"></script>
             </div>
