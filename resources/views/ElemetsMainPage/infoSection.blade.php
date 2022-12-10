@@ -26,24 +26,34 @@
     </div>
 </section>
 <section>
-    <div class="bg-primary text-white row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4 d-flex justify-content-between align-items-center" style="height: 55vh">
-        <div class="owl-item" style="width: 22%;">
+    <div class="bg-primary text-white row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4 d-flex justify-content-between align-items-center" style="min-height: 60vh">
+        <div class="owl-item-square" style="width: 22%;">
             <img src="{{asset("images/main/info/img.png")}}" alt=""/>
             <h4 class="text-center">КУХОННАЯ <br/> ФУРНИТУРА</h4>
         </div>
-        <div class="owl-item" style="width: 22%">
+        <div class="owl-item-square" style="width: 22%">
             <img src="{{asset("images/main/info/img_1.png")}}" alt=""/>
             <h4 class="text-center">РУЧКИ <br/> ШКАФОВ</h4>
         </div >
-        <div class="owl-item" style="width: 22%">
+        <div class="owl-item-square" style="width: 22%">
             <img src="{{asset("images/main/info/img_2.png")}}" alt=""/>
             <h4 class="text-center">ХРАНЕНИЕ <br/> РИБОРОВ</h4>
         </div>
-        <div class="owl-item" style="width: 22%">
+        <div class="owl-item-square" style="width: 22%">
             <img src="{{asset("images/main/info/img_3.png")}}" alt=""/>
             <h4 class="text-center">ВЫДВИЖНЫЕ <br/> СИСТЕМЫ</h4>
         </div>
+        <div class="d-flex justify-content-center " style="width: 100%; z-index: 1; height: 50px">
+            <div>
+                <img
+                    src="images/icons/arrow.svg"
+                    alt="triangle with all three sides equal"
+                    height="70px"
+                    width="70px" />
+            </div>
+        </div>
     </div>
+
 </section>
 
 
