@@ -4,7 +4,7 @@
     <div class="owl-carousel owl-theme owl-loaded side col-10">
         <div class="owl-stage-outer">
             <div class="owl-stage blur">
-                @for ($i = 1; $i <= 11; $i++)
+                @for ($i = 1; $i <= 19; $i++)
                     <div class="owl-item">
                         <img src="{{asset('images/resoultProject/'. $i . '.jpg')}}"/>
                     </div>
