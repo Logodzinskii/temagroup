@@ -73,3 +73,8 @@ Route::get('/contacts/', function () {
 Route::get('/access/to/order/{code}', [OrderForm::class, 'showDetailOrder']);
 
 Route::get('/yml/',[ControllerYml::class, 'createYml']);
+
+/**
+ * Маршруты для заголовков и описания страниц
+ */
+
