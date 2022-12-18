@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use Symfony\Component\HttpFoundation\File\File;
-
+use App\Models\Descryptions;
 class CatalogController extends Controller
 {
     protected string $status;
@@ -33,8 +33,9 @@ class CatalogController extends Controller
     {
 
         $catalog = Catalog::all();
-
-        return view('main', ['catalog' => $catalog]);
+        $desryptions = Descryptions::firstWhere('page','=','main');
+        return view('main', ['catalog' => $catalog,
+            'descryptions'=>$desryptions]);
     }
     public function store($article)
     {

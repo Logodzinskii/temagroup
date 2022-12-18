@@ -2,9 +2,9 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <META NAME="description" content="Компания-тема. Мы занимаемся изготовлением корпусной мебели на заказ в Екатеринбурге. Звони +7 963 272 72 82">
+        <META NAME="description" content="{{$descryptions['descryption']}}">
         <meta name="csrf-token" content="{{ csrf_token() }}" />
-        <title>Компания-тема. Изготовление корпусной мебели на заказ в Екатеринбурге</title>
+        <title>{{$descryptions['title']}}</title>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <link rel="icon" type="image/png" href="{{ asset('images/logo/logo.png') }}"/>
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -102,7 +102,7 @@
     <body class="container-fluid row p-0 m-0 d-flex justify-content-center">
         @include('header')
         <section class="d-flex row p-0 m-0 text-body col-10" >
-            <h1 class="title-section-white">Связаться с нами</h1>
+            <h1 class="title-section-white">{{$descryptions['h1']}}</h1>
             <div class="container " style="margin-bottom: 10vh" >
                 <div class="row">
                     <div class="col-3">

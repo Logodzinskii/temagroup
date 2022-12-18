@@ -51,7 +51,7 @@
     min-height: 100vh;
 }
 .bg-img-main{
-    background-image: url("../public/images/main/img.png");
+    background-image: url("../public/images/main/kitchen_3_main.jpg");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -127,4 +127,7 @@
     font-size: 8px;
     padding: 10px 0 10px 0;
     content: "________________________________";
+}
+.animated{
+
 }

@@ -9,6 +9,7 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\UsersControllers;
 use App\Http\Controllers\UsersOrders;
 use App\Http\Controllers\ControllerYml;
+use App\Models\Descryptions;
 
 /*
 |--------------------------------------------------------------------------
@@ -67,9 +68,15 @@ Route::get('/catalog/{article}', [\App\Http\Controllers\CatalogController::class
 
 Route::get('/calculate/{model}', [CalculateContentController::class, 'showKitchen']);
 Route::get('/contacts/', function () {
-    return view('contacts');
+    $desryptions = Descryptions::firstWhere('page','=','main');
+    return view('contacts', ['descryptions'=>$desryptions]);
 });
 
 Route::get('/access/to/order/{code}', [OrderForm::class, 'showDetailOrder']);
 
 Route::get('/yml/',[ControllerYml::class, 'createYml']);
+
+/**
+ * Маршруты для заголовков и описания страниц
+ */
+

@@ -7,12 +7,12 @@
         </div>
         <div class="offcanvas offcanvas-end bg-primary" tabindex="-1" id="navbarOffcanvasLg" aria-labelledby="navbarOffcanvasLgLabel">
             <button type="button" class="btn-close text-reset align-self-end" data-bs-dismiss="offcanvas" aria-label="Закрыть"></button>
-            <ul class="text-white list-unstyled text-start navbar-nav row col-md-12 mb-2 mb-lg-0 d-flex col justify-content-start align-content-between p-0 m-0">
+            <ul class="text-center text-white list-unstyled text-start navbar-nav row col-md-12 mb-2 mb-lg-0 d-flex col justify-content-center align-content-between p-0 m-0">
                 <li>
                     <h2 class="fs-6 main-menu-text" style="margin-bottom: 10vh">КОМПАНИЯ-ТЕМА.РФ</h2>
-                    <ul class="list-unstyled">
+                    <ul class="list-unstyled row d-flex justify-content-center ">
                         @guest
-                            <li><a href="/">Главная</a></li>
+                            <li class="text-center"><a href="/">Главная</a></li>
                             <li><a href="/calculate/modelfirst/">Калькулятор</a></li>
                             <li><a href="/contacts/">Контакты</a></li>
                         @else
@@ -39,7 +39,7 @@
                 </li>
                 <li>
                 <li class="nav-item m-2">
-                    <div class="d-flex justify-content-start">
+                    <div class="d-flex justify-content-center">
                         <div class="btn btn-outline-primary" style="font-size: 70%!important;">Узнать стоимость проекта</div>
                     </div>
                 </li>
