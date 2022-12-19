@@ -203,6 +203,10 @@
                                 @endforeach
                             </div>
                         </div>
+                        <script src="https://yastatic.net/share2/share.js"></script>
+                        <div class="d-flex justify-content-center" style="width: 100%">
+                            <div class="ya-share2" data-curtain data-shape="round" data-color-scheme="blackwhite" data-services="messenger,vkontakte,odnoklassniki,telegram,whatsapp,moimir"></div>
+                        </div>
                     </div>
                     <div class="col p-3">
                         <div class="card-title">

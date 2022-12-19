@@ -6,7 +6,7 @@
             <div class="owl-stage blur">
                 @for ($i = 1; $i <= 19; $i++)
                     <div class="owl-item">
-                        <img src="{{asset('images/resoultProject/'. $i . '.jpg')}}"/>
+                        <img src="{{asset('images/resoultProject/'. $i . '.jpg')}}" alt="мебель на заказ. Компания-тема."/>
                     </div>
                 @endfor
             </div>
