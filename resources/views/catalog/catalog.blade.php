@@ -107,9 +107,14 @@
             $(".owl-carousel:eq(0)").owlCarousel(
                 {
 
-                    margin:10,
-                    dots: true,
-                    autoplay:true,
+                    margin:40,
+                    dots: false,
+                    autoplay:false,
+                    lazyLoad: true,
+                    loop: true,
+                    nav:true,
+                    navText: ['',
+                        ''],
                     responsive:{
                         0:{
                             items:1
@@ -119,60 +124,6 @@
                         },
                         1000:{
                             items:1
-                        }
-                    }
-                }
-            );
-            $(".owl-carousel:eq(1)").owlCarousel(
-                {
-
-                    margin:10,
-
-                    responsive:{
-                        0:{
-                            items:1
-                        },
-                        600:{
-                            items:3
-                        },
-                        1000:{
-                            items:4
-                        }
-                    }
-                }
-            );
-            $(".owl-carousel:eq(2)").owlCarousel(
-                {
-
-                    margin:10,
-
-                    responsive:{
-                        0:{
-                            items:1
-                        },
-                        600:{
-                            items:2
-                        },
-                        1000:{
-                            items:3
-                        }
-                    }
-                }
-            );
-            $(".owl-carousel:eq(3)").owlCarousel(
-                {
-
-                    margin:10,
-                    autoplay:true,
-                    responsive:{
-                        0:{
-                            items:4
-                        },
-                        600:{
-                            items:4
-                        },
-                        1000:{
-                            items:8
                         }
                     }
                 }
@@ -208,7 +159,7 @@
                             <div class="ya-share2" data-curtain data-shape="round" data-color-scheme="blackwhite" data-services="messenger,vkontakte,odnoklassniki,telegram,whatsapp,moimir"></div>
                         </div>
                     </div>
-                    <div class="col p-3">
+                    <div class="col" style="padding-left: 30px">
                         <div class="card-title">
                             <h1>Характеристики</h1>
                             <h3 style="color: grey">арт. {{$offer[0]['article']}}</h3>

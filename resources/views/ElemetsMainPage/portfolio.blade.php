@@ -3,7 +3,7 @@
     <h2 class="text-white text-center title-section-white">ПОРТФОЛИО ПРОЕКТОВ</h2>
     <div class="owl-carousel owl-theme owl-loaded side col-10">
         <div class="owl-stage-outer">
-            <div class="owl-stage blur">
+            <div class="owl-stage blur" style="margin: 0 0 100px">
                 @for ($i = 1; $i <= 19; $i++)
                     <div class="owl-item">
                         <img src="{{asset('images/resoultProject/'. $i . '.jpg')}}" alt="мебель на заказ. Компания-тема."/>
