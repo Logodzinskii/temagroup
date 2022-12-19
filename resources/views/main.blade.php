@@ -105,9 +105,14 @@
             $(".owl-carousel:eq(0)").owlCarousel(
                 {
 
-                    margin:10,
+                    margin:40,
                     dots: false,
                     autoplay:false,
+                    lazyLoad: true,
+                    loop: true,
+                    nav:true,
+                    navText: ['',
+                        ''],
                     responsive:{
                         0:{
                             items:1
