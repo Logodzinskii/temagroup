@@ -101,7 +101,9 @@
 
                 e.preventDefault();
             });
-
+            $('.open').on('click',function (){
+                $('.offer').show();
+            });
             $(".owl-carousel:eq(0)").owlCarousel(
                 {
 
@@ -219,5 +221,6 @@
         @include('ElemetsMainPage/deliverySection')
         @include('ElemetsMainPage/checkSection')
         @include('ElemetsMainPage/formSection')
+        @include('ElemetsMainPage/modalForm')
         @extends('footer')
     </body>

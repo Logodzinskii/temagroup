@@ -18,12 +18,12 @@
                 известных европейскихи и отечественных
                 брендов: BLUM, Hettich.
             </p>
-            <a href="#form">
-                <div class="btn btn-outline-primary">
+
+                <div class="btn btn-outline-primary open">
                     ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ
                     <div class="btn-outline-primary-inners"></div>
                 </div>
-            </a>
+
         </div>
     </div>
 </section>

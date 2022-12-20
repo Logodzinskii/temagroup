@@ -186,12 +186,9 @@
                                     <span style="color: darkred">Цена:</span> <b>{{$offer[0]['price']}}</b> р.
                                 </h2>
                             </div>
-
-                            <h2>Проект в формате pdf</h2>
-                            <ul class="row d-flex">
-                                <li><a href="/public/prices/{{$offer[0]['article']}}/{{$offer[0]['file']}}" download="filename">Скачать</a></li>
-                            </ul>
-                            <button type="submit" class="btn btn-outline-danger open">Купить</button>
+                            <div type="submit" class="btn btn-outline-secondary open">
+                                <div class="btn-outline-secondary-inners">Купить</div>
+                            </div>
                         </div>
                     </div>
                 </div>
