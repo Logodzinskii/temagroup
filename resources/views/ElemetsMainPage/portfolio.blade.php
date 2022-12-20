@@ -1,6 +1,8 @@
 
 <section class="container-fluid bg-primary row d-flex justify-content-center align-items-center flex-wrap" style="min-height: 90vh">
-    <h2 class="text-white text-center title-section-white">ПОРТФОЛИО ПРОЕКТОВ</h2>
+    <div class="position-relative" style="height: 120px">
+        <h2 id='title1' class="text-white text-center title-section-white title-slide">ПОРТФОЛИО ПРОЕКТОВ</h2>
+    </div>
     <div class="owl-carousel owl-theme owl-loaded side col-10">
         <div class="owl-stage-outer">
             <div class="owl-stage blur" style="margin: 0 0 100px">

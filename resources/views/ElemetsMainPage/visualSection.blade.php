@@ -1,6 +1,8 @@
 
 <section class="container-fluid bg-primary text-white row d-flex justify-content-center align-items-center flex-wrap">
-    <h2 class="text-center top-bottom-50 title-section-white">ДЕЛАЕМ ВИЗУАЛИЗАЦИЮ ПРОЕКТА</h2>
+    <div class="position-relative" style="height: 120px">
+        <h2 class="text-center top-bottom-50 title-section-white title-slide">ДЕЛАЕМ ВИЗУАЛИЗАЦИЮ ПРОЕКТА</h2>
+    </div>
     <div class="row d-flex justify-content-center align-items-center top-bottom-50" >
         <div class="col-12 col-sm-12 col-md-4 container fs-4 text-center d-flex align-items-center justify-content-center flex-wrap">
             <p style="width: 100%; padding: 2vh 0 2vh 0" >
