@@ -101,7 +101,40 @@
 
                 e.preventDefault();
             });
+            var num = 0;
 
+            var postion = $('.title-slide').eq(0).offset().top-500,
+                height = $('.title-slide').eq(0).height();
+
+
+            $(document).on('scroll', function (){
+
+                var scroll = $(document).scrollTop();
+                if(scroll  > postion && scroll < (postion+15) ) {
+                    $('.title-slide').eq(0).addClass('title-slide-left');
+                    num+=1;
+                    console.log(num);
+                    pos(num)
+                }
+            })
+
+            function pos(num){
+                var postion = $('.title-slide').eq(num).offset().top-500;
+                $(document).on('scroll', function (){
+
+                    var scroll = $(document).scrollTop();
+                    if(scroll  > postion && scroll < (postion+15) ) {
+                        $('.title-slide').eq(num).addClass('title-slide-left');
+                        num+=1;
+                        console.log(num);
+                        pos(num)
+                    }
+                })
+            }
+
+            $('.open').on('click',function (){
+                $('.offer').show();
+            });
             $(".owl-carousel:eq(0)").owlCarousel(
                 {
 
@@ -122,60 +155,6 @@
                         },
                         1000:{
                             items:3
-                        }
-                    }
-                }
-            );
-            $(".owl-carousel:eq(1)").owlCarousel(
-                {
-
-                    margin:10,
-
-                    responsive:{
-                        0:{
-                            items:1
-                        },
-                        600:{
-                            items:2
-                        },
-                        1000:{
-                            items:3
-                        }
-                    }
-                }
-            );
-            $(".owl-carousel:eq(2)").owlCarousel(
-                {
-
-                    margin:10,
-
-                    responsive:{
-                        0:{
-                            items:1
-                        },
-                        600:{
-                            items:2
-                        },
-                        1000:{
-                            items:3
-                        }
-                    }
-                }
-            );
-            $(".owl-carousel:eq(3)").owlCarousel(
-                {
-
-                    margin:10,
-                    autoplay:true,
-                    responsive:{
-                        0:{
-                            items:4
-                        },
-                        600:{
-                            items:4
-                        },
-                        1000:{
-                            items:8
                         }
                     }
                 }
@@ -219,5 +198,6 @@
         @include('ElemetsMainPage/deliverySection')
         @include('ElemetsMainPage/checkSection')
         @include('ElemetsMainPage/formSection')
+        @include('ElemetsMainPage/modalForm')
         @extends('footer')
     </body>

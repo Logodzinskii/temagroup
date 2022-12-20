@@ -1,8 +1,7 @@
+<div class="position-relative" style="height: 20vh">
+    <h2 class="title-section-dark title-slide">ДОСТАВКА И МОНТАЖ</h2>
+</div>
 <section class="container-fluid bg-primary text-white d-flex justify-content-center align-items-center flex-wrap">
-    <div class="text-center text-body bg-light col-12 top-bottom-50 d-flex justify-content-center align-items-center" style="min-height: 20vh">
-        <h2 class="title-section-dark">ДОСТАВКА И МОНТАЖ</h2>
-    </div>
-
     <div class="d-flex justify-content-between  align-items-center flex-wrap">
         <div class="col-12 col-sm-12 col-md-4  owl-item d-flex justify-content-start">
             <img src="{{asset("images/main/img_1.png")}}" alt=""/>

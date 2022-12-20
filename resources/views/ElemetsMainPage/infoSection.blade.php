@@ -1,11 +1,15 @@
 
 <section class="container-fluid bg-primary text-white row d-flex justify-content-center align-items-center flex-wrap" style="position: relative">
-    <div class="dark-fon"></div>
+    <div class="dark-fon">
+
+    </div>
     <div class="owl-item">
         <img src="{{asset("images/main/info/img_4.png")}}">
     </div>
     <div class="row col-10 d-flex row justify-content-start flex-wrap" style="z-index: 1; position: absolute; top:0;">
-        <div class="title-section-white"></div>
+        <div class="position-relative" style="height: 120px">
+            <h1 class="text-center title-section-dark title-slide"></h1>
+        </div>
         <ul class="col-12 col-sm-12 col-md-6 fs-6 list-unstyled text-white d-flex row align-items-baseline"  >
             <li>ДОЛГОВЕЧНАЯ ФУРНИТУРА</li>
             <li>УДОБНЫЕ РУЧКИ</li>
@@ -18,12 +22,12 @@
                 известных европейскихи и отечественных
                 брендов: BLUM, Hettich.
             </p>
-            <a href="#form">
-                <div class="btn btn-outline-primary">
+
+                <div class="btn btn-outline-primary open">
                     ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ
                     <div class="btn-outline-primary-inners"></div>
                 </div>
-            </a>
+
         </div>
     </div>
 </section>
