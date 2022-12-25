@@ -12,10 +12,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href={{ asset('css/owl.carousel.min.css') }}>
     <link rel="stylesheet" href={{ asset('css/owl.theme.default.min.css') }}>
-    <link rel="stylesheet" href="{{asset('css/calculate.css')}}">
-
-
-    <link rel="stylesheet" href={{ asset('css/bootstrap.min.css') }}>
+    <link rel="stylesheet" href={{ asset('css/bootstrap.css') }}>
+    <link rel="stylesheet" href={{ asset('css/main.css') }}>
     <script type="text/javascript" src="{{asset('js/bootstrap.bundle.js')}}"></script>
     <script type="text/javascript" src={{ asset('js/owl.carousel.min.js')}}></script>
     <script type="text/javascript" src="{{asset('js/calculate_slider.js')}}"></script>
@@ -40,12 +38,13 @@
     <!-- /Yandex.Metrika counter -->
 
 </head>
+@include('../header')
 <body>
 <div id="app">
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="/">
-                TemaGroup
+
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                 <span class="navbar-toggler-icon"></span>
@@ -63,7 +62,7 @@
                     @guest
                         @if (Route::has('login'))
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Регистрация') }}</a>
                             </li>
                         @endif
 
@@ -82,7 +81,7 @@
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
+                                    {{ __('Выйти') }}
                                 </a>
                                 <a class="dropdown-item" href="/">Главная</a>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
