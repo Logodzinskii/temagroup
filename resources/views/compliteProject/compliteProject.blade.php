@@ -32,7 +32,7 @@
             <div class="" >
                 <div class="row d-flex justify-content-between flex-wrap">
                                 @foreach($complete as $cat)
-                                    <div class="owl-item-square text-white col-4" style="position: relative">
+                                    <div class="owl-item-square text-white col-12 col-md-4" style="position: relative">
                                         <div class="">
                                             <img src="{{json_decode($cat['image'], true)[0]}}" alt="компания-тема кухня">
                                         </div>
