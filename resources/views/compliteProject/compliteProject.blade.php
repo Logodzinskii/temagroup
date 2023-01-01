@@ -27,12 +27,12 @@
     </head>
     <body class="container-fluid p-0 m-0 row d-flex justify-content-center">
         @include('header')
-        <div class="col-10">
+        <div class="col-12">
             <h1 class="title-section-dark">ГОТОВЫЕ ПРОЕКТЫ</h1>
-            <div class="container" >
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 row-cols-xl-3 g-1 g-md-2 g-lg-3">
+            <div class="" >
+                <div class="row d-flex justify-content-between flex-wrap">
                                 @foreach($complete as $cat)
-                                    <div class="owl-item-square text-white " style="position: relative">
+                                    <div class="owl-item-square text-white col-4" style="position: relative">
                                         <div class="">
                                             <img src="{{json_decode($cat['image'], true)[0]}}" alt="компания-тема кухня">
                                         </div>
