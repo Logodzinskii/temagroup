@@ -26,17 +26,29 @@ class CompleteProjectController extends Controller
      */
     public function create(Request $request)
     {
-        $chpu=ChpuController::chpuGenerate($request->metaTitle);
+        $paths = [];
+        if($request->hasFile('files'))
+        {
+            foreach ($request->file('files') as $files) {
+                $names = $files->getClientOriginalName();
+                $date = new \DateTime('now');
+                $files->move('images/completeProject/', md5($date->format('dd-MM-YYY:i:s')) . $names);
+                $paths[] = 'images/completeProject/' . md5($date->format('dd-MM-YYY:i:s')) . $names;
+            }
+        }
+        print_r($paths);
+        $chpu=ChpuController::chpuGenerate($request->nameProject);
         $project = new CompleteProject();
-        $project->category = $request->category;
-        $project->article = $request->article;
-        $project->type = $request->type;
-        $project->meta_title = $request->metaTitle;
-        $project->meta_desriptions = $request->metaDesriptions;
-        $project->image = $request->image;
+        $project->category = $request->selectCategory;
+        $project->article = 0;
+        $project->type = $request->selectCategory;
+        $project->meta_title = $request->nameProject;
+        $project->meta_descriptions = $request->metaDescriptions;
+        $project->image = json_encode($paths);
         $project->chpu_complite = $chpu;
+        $project->price = $request->priceProject;
         $project->save();
-        return http_response_code(200);
+        return \redirect('/complete/');
     }
 
     /**

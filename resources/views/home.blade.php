@@ -19,6 +19,7 @@
                         <li class="list-unstyled"><a href="/admin/kitchen/edit/">Редактирование стоимости кухни</a></li>
                         <li class="list-unstyled"><a href="/admin/content/edit/">Редактирование страниц</a></li>
                         <li class="list-unstyled"><a href="/admin/offers/edit/">Редактирование товаров</a></li>
+                        <li class="list-unstyled"><a href="/admin/complete-project/">Редактирование готовых проектов</a></li>
                     </ul>
                     {{ __('Вход выполнен успешно!') }}
                 </div>

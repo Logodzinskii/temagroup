@@ -79,3 +79,4 @@ Route::get('/yml/',[ControllerYml::class, 'createYml']);
  * Маршруты для готовых проектов
  */
 Route::get('/complete/', [CompleteProjectController::class, 'index']);
+Route::post('/admin/add-complite-project/', [CompleteProjectController::class, 'create'])->name('create.complete.project')->middleware('auth');
