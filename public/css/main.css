@@ -197,3 +197,7 @@
     right: -25px;
     transition: background-color 0.5s, right 0.5s;
 }
+.form-text-link-dark li a
+{
+    color: #2E2D30 !important;
+}

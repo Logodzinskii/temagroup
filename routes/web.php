@@ -10,7 +10,7 @@ use App\Http\Controllers\UsersControllers;
 use App\Http\Controllers\UsersOrders;
 use App\Http\Controllers\ControllerYml;
 use App\Models\Descryptions;
-
+use App\Http\Controllers\CompleteProjectController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -75,8 +75,9 @@ Route::get('/contacts/', function () {
 Route::get('/access/to/order/{code}', [OrderForm::class, 'showDetailOrder']);
 
 Route::get('/yml/',[ControllerYml::class, 'createYml']);
-
 /**
- * Маршруты для заголовков и описания страниц
+ * Маршруты для готовых проектов
  */
-
+Route::get('/complete/', [CompleteProjectController::class, 'index']);
+Route::post('/admin/add-complite-project/', [CompleteProjectController::class, 'create'])->name('create.complete.project')->middleware('auth');
+Route::get('/complete/{chpu}/', [CompleteProjectController::class, 'store']);

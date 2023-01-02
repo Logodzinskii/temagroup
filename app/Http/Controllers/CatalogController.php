@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use Symfony\Component\HttpFoundation\File\File;
 use App\Models\Descryptions;
+use App\Models\CompleteProject;
 class CatalogController extends Controller
 {
     protected string $status;
@@ -33,9 +34,11 @@ class CatalogController extends Controller
     {
 
         $catalog = Catalog::all();
+        $complete = CompleteProject::all();
         $desryptions = Descryptions::firstWhere('page','=','main');
         return view('main', ['catalog' => $catalog,
-            'descryptions'=>$desryptions]);
+            'descryptions'=>$desryptions,
+            'complete'=>$complete]);
     }
     public function store($article)
     {
