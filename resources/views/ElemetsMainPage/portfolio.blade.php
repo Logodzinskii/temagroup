@@ -18,7 +18,7 @@
                                     <h2 class="row" style="width: 100%; margin-bottom: 5vh">
                                         <span class="text-center fs-6">{{$cat['meta_title']}}</span>
                                     </h2>
-                                    <a href="/catalog/{{$cat['chpu_complite']}}">
+                                    <a href="/complete/{{$cat['chpu_complite']}}">
                                         ПОДРОБНЕЕ
                                     </a>
                                 </div>

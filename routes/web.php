@@ -80,3 +80,4 @@ Route::get('/yml/',[ControllerYml::class, 'createYml']);
  */
 Route::get('/complete/', [CompleteProjectController::class, 'index']);
 Route::post('/admin/add-complite-project/', [CompleteProjectController::class, 'create'])->name('create.complete.project')->middleware('auth');
+Route::get('/complete/{chpu}/', [CompleteProjectController::class, 'store']);

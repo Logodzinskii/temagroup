@@ -31,6 +31,7 @@
             <h1 class="title-section-dark">ГОТОВЫЕ ПРОЕКТЫ</h1>
             <div class="" >
                 <div class="row d-flex justify-content-between flex-wrap">
+
                                 @foreach($complete as $cat)
                                     <div class="owl-item-square text-white col-12 col-md-4" style="position: relative">
                                         <div class="">
@@ -43,7 +44,7 @@
                                                     <h2 class="row" style="width: 100%; margin-bottom: 5vh">
                                                         <span class="text-center fs-6">{{$cat['meta_title']}}</span>
                                                     </h2>
-                                                    <a href="/catalog/{{$cat['chpu_complite']}}">
+                                                    <a href="/complete/{{$cat['chpu_complite']}}">
                                                        ПОДРОБНЕЕ
                                                     </a>
                                                 </div>
@@ -56,6 +57,7 @@
                         <div class="d-flex justify-content-center" style="width: 100%">
                             <div class="ya-share2" data-curtain data-shape="round" data-color-scheme="blackwhite" data-services="messenger,vkontakte,odnoklassniki,telegram,whatsapp,moimir"></div>
                         </div>
+
             </div>
         @auth
             <div class="container-fluid d-flex justify-content-center bg-light ">
@@ -162,5 +164,13 @@
                 </div>
             </div>
         @endauth
+        @guest
+            <div class="container-fluid d-flex justify-content-center bg-light ">
+                <a href="/" class="open btn btn-outline-secondary col-12 col-sm-12 col-md-6 " style="margin: 50px 0 50px 0">
+                    НА ГЛАВНУЮ СТРАНИЦУ
+                    <div class="btn-outline-secondary-inners"></div>
+                </a>
+            </div>
+            @endguest
         @extends('footer')
     </body>

@@ -15,7 +15,21 @@ class CompleteProjectController extends Controller
      */
     public function index()
     {
+
         $allProject = CompleteProject::all();
+        if(!$allProject)
+        {
+            $images = [
+                '/images/icons/defimg.jpg',
+            ];
+            $allProject[] = [
+                'meta_title'=>'Готовые проекты',
+                'meta_descriptions'=>'Посмотрите примеры наших работ',
+                'image'=>json_encode($images),
+                'chpu_complite'=>'#',
+            ];
+        }
+
         return view('compliteProject/compliteProject', ['complete'=> $allProject]);
     }
 
@@ -57,9 +71,9 @@ class CompleteProjectController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store($chpu)
     {
-        //
+        return view('/compliteProject/compliteProjectDetails', ['project'=>CompleteProject::where('chpu_complite', $chpu)->get()]);
     }
 
     /**
