@@ -11,21 +11,11 @@ class DescryptionsController extends Controller
      * CRUD
      */
 
-    public function indexDescryptions($id=null)
+    public function indexDescryptions()
     {
-        $descryptions = new Descryptions();
-        if(isset($id)){
+        $page = Descryptions::all();
 
-            $descryptions::find($id);
-
-        }else{
-
-            $descryptions = new Descryptions();
-            $descryptions::all();
-
-        }
-
-        return $descryptions;
+        return view('/admin/adminDescrypionsEdite', ['pagesContent' => $page]);
     }
 
     public function createDescryption(Request $request)
@@ -40,7 +30,7 @@ class DescryptionsController extends Controller
 
     public function updateDescryption(Request $request)
     {
-        $descryptions = DB::table('descryption')
+        $descryptions = DB::table('descryptions')
             ->where('id', $request->id)
             ->update([
                 'page'=>$request->page,
@@ -48,11 +38,11 @@ class DescryptionsController extends Controller
                 'title'=>$request->title,
                 'h1'=>$request->h1,
             ]);
+
     }
 
     public function deleteDescryption(Request $request)
     {
         Descryptions::find($request->id)->delete();
-
     }
 }

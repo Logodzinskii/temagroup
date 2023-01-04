@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\CompleteProject;
 use App\View\Components\header;
 use Illuminate\Http\Request;
+use App\Models\Descryptions;
 
 class CompleteProjectController extends Controller
 {
@@ -30,7 +31,7 @@ class CompleteProjectController extends Controller
             ];
         }
 
-        return view('compliteProject/compliteProject', ['complete'=> $allProject]);
+        return view('compliteProject/compliteProject', ['complete'=> $allProject, 'page' => Descryptions::firstWhere('page','=','complete')]);
     }
 
     /**
