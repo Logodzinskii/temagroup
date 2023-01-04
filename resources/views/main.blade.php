@@ -159,6 +159,7 @@
                     }
                 }
             );
+
         });
     </script>
     <!-- Yandex.Metrika counter -->
@@ -197,6 +198,7 @@
         @include('ElemetsMainPage/infoSection')
         @include('ElemetsMainPage/deliverySection')
         @include('ElemetsMainPage/checkSection')
+        @include('ElemetsMainPage/infoVisitors')
         @include('ElemetsMainPage/formSection')
         @include('ElemetsMainPage/modalForm')
         @extends('footer')
