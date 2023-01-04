@@ -11,6 +11,7 @@ use App\Http\Controllers\UsersOrders;
 use App\Http\Controllers\ControllerYml;
 use App\Models\Descryptions;
 use App\Http\Controllers\CompleteProjectController;
+use App\Http\Controllers\DescryptionsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -60,15 +61,18 @@ Route::get('/admin/offer/add/{article}', [\App\Http\Controllers\CatalogControlle
 /**
  * Маршрут для контента страницы
  */
-Route::get('/admin/content/edit/', [PageController::class, 'index'])->middleware('auth');
-Route::delete('/admin/content/edit/',[PageController::class, 'deleteContent'])->middleware('auth');
-Route::post('/admin/content/edit/',[PageController::class, 'createContent'])->middleware('auth');
+Route::get('/admin/content/edit/', [DescryptionsController::class, 'indexDescryptions'])->middleware('auth');
+Route::post('/admin/content/create/', [DescryptionsController::class, 'createDescryption'])->middleware('auth')->name('create.descryption.page');
+Route::delete('/admin/content/delete/',[DescryptionsController::class, 'deleteDescryption'])->middleware('auth');
+Route::put('/admin/content/edit/',[DescryptionsController::class, 'updateDescryption'])->middleware('auth')->name('update.descryption.page');
+
 
 Route::get('/catalog/{article}', [\App\Http\Controllers\CatalogController::class, 'store']);
 
 Route::get('/calculate/{model}', [CalculateContentController::class, 'showKitchen']);
+
 Route::get('/contacts/', function () {
-    $desryptions = Descryptions::firstWhere('page','=','main');
+    $desryptions = Descryptions::firstWhere('page','=','contacts');
     return view('contacts', ['descryptions'=>$desryptions]);
 });
 
