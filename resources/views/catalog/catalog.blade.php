@@ -135,7 +135,7 @@
     </script>
     </head>
     <body class="container-fluid p-0 m-0 row d-flex justify-content-center">
-        @include('header')
+    <x-header></x-header>
         <div class="col-10">
             <h1 class="title-section-dark">{{$offer[0]['meta_title']}}</h1>
             <div class="container" >
@@ -283,5 +283,5 @@
             </div>
         </div>
 
-        @extends('footer')
+    <x-footer></x-footer>
     </body>

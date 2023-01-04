@@ -103,7 +103,7 @@
         </script>
     </head>
     <body class="container-fluid p-0 m-0">
-        @include('header')
+    <x-header></x-header>
         <section class="p-0 m-0 col-12 d-flex flex-wrap justify-content-start " style="min-height: 80vh">
 
                 <table class="table xs-auto tableValue" >
@@ -171,5 +171,5 @@
 
         </section>
 
-        @extends('footer')
+    <x-footer></x-footer>
     </body>

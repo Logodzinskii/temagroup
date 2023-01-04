@@ -38,7 +38,7 @@
     <!-- /Yandex.Metrika counter -->
 
 </head>
-@include('../header')
+<x-header></x-header>
 <body>
 <div id="app">
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
@@ -99,5 +99,6 @@
         @yield('content')
     </main>
 </div>
+<x-footer></x-footer>
 </body>
 </html>

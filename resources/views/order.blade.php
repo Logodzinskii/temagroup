@@ -16,13 +16,9 @@
 
     </head>
     <body class="container-fluid p-0 m-0">
-        @include('header')
+    <x-header></x-header>
         <section>
             {{ $title }}
         </section>
-        <footer style="min-height: 50vh; background-color: black; color: white" class="p-0 m-0">
-            <div class="row">
-                <h5>Контакты</h5>
-            </div>
-        </footer>
+    <x-footer></x-footer>
     </body>

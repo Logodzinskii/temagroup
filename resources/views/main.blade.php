@@ -190,7 +190,7 @@
     </script>
     </head>
     <body class="container-fluid p-0 m-0">
-        @include('header')
+        <x-header></x-header>
         @include('ElemetsMainPage/indexSection')
         @include('ElemetsMainPage/portfolio')
         @include('ElemetsMainPage/visualSection')
@@ -201,5 +201,5 @@
         @include('ElemetsMainPage/infoVisitors')
         @include('ElemetsMainPage/formSection')
         @include('ElemetsMainPage/modalForm')
-        @extends('footer')
+        <x-footer></x-footer>
     </body>
