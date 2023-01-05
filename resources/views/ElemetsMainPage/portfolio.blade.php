@@ -1,9 +1,7 @@
 
 <section class="container-fluid bg-primary row d-flex justify-content-center align-items-center flex-wrap" style="min-height: 90vh">
     <div class="col-12">
-        <div class="position-relative" style="height: 120px">
-            <h2 class="text-center top-bottom-50 title-section-white title-slide title-slide-left text-white">ГОТОВЫЕ ПРОЕКТЫ</h2>
-        </div>
+        @h2li(ГОТОВЫЕ ПРОЕКТЫ)
             <div class="" >
             <div class="row d-flex justify-content-between flex-wrap">
                 @foreach($complete as $cat)

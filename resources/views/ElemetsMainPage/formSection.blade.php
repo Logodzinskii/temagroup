@@ -1,4 +1,4 @@
-<h1 class="text-center title-section-dark">Готовы сделать заказ?</h1>
+@h2dk(Готовы сделать заказ?)
 <section class="p-0 m-0 d-flex justify-content-around align-items-start flex-wrap" id="form">
     <form class="" id="orderForm">
         <h2>Отправьте заявку на расчет</h2>

@@ -40,7 +40,7 @@
         ];
     $i=1;
     @endphp
-
+    @h2li(ВОПРОС-ОТВЕТ)
     <div class="accordion col-12 col-sm-10"  id="accordionPanelsStayOpenExample">
         @foreach($questions as $key=>$val)
         <div class="text-dark">Вопрос - {{$i++}}</div>
