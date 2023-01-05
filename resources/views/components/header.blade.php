@@ -11,6 +11,9 @@
                 <li>
                     <h2 class="fs-6 main-menu-text" style="margin-bottom: 10vh">КОМПАНИЯ-ТЕМА.РФ</h2>
                     <ul class="list-unstyled row d-flex justify-content-center ">
+                        @php
+                        $links = \App\Models\Descryptions::all();
+                        @endphp
                         @guest
                             @foreach($links as $link)
                             <li class="text-center"><a href="{{$link['page']}}">{{$link['title']}}</a></li>

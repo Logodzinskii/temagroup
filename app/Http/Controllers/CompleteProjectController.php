@@ -14,10 +14,14 @@ class CompleteProjectController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($category=null)
     {
+        if(is_null($category)){
+            $allProject = CompleteProject::all();
+        }else{
+            $allProject = CompleteProject::where('category', $category)->get();
+        }
 
-        $allProject = CompleteProject::all();
         if(!$allProject)
         {
             $images = [

@@ -26,6 +26,6 @@ class header extends Component
     public function render()
     {
 
-        return view('components.header',['links'=>Descryptions::all()]);
+        return view('components.header');
     }
 }
