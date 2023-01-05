@@ -35,7 +35,7 @@
                                 @foreach($complete as $cat)
                                     <div class="owl-item-square text-white col-12 col-md-4" style="position: relative">
                                         <div class="">
-                                            <img src="{{json_decode($cat['image'], true)[0]}}" alt="компания-тема кухня">
+                                            <img src="/{{json_decode($cat['image'], true)[0]}}" alt="компания-тема кухня">
                                         </div>
                                         <div class="card-body d-flex row justify-content-center align-items-baseline" style="position: absolute; top:20px; z-index: 1; width:100%; height: 100%">
                                             <p class="card-text fs-5 text-center" style="min-height: 0px; width: 100%"></p>
