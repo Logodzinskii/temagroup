@@ -35,7 +35,7 @@ class CatalogController extends Controller
 
         $catalog = Catalog::all();
         $complete = CompleteProject::all();
-        $desryptions = Descryptions::firstWhere('page','=','main');
+        $desryptions = Descryptions::firstWhere('page','=','/');
         return view('main', ['catalog' => $catalog,
             'descryptions'=>$desryptions,
             'complete'=>$complete]);

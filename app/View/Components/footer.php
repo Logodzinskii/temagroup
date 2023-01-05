@@ -2,11 +2,9 @@
 
 namespace App\View\Components;
 
-use App\Http\Controllers\DescryptionsController;
-use App\Models\Descryptions;
 use Illuminate\View\Component;
 
-class header extends Component
+class footer extends Component
 {
     /**
      * Create a new component instance.
@@ -25,7 +23,6 @@ class header extends Component
      */
     public function render()
     {
-
-        return view('components.header',['links'=>Descryptions::all()]);
+        return view('components.footer');
     }
 }

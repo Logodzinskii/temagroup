@@ -27,8 +27,8 @@
     <script src="https://yastatic.net/share2/share.js"></script>
     </head>
     <body class="container-fluid p-0 m-0 row d-flex justify-content-center">
-        @include('header')
-        <div class="col-12">
+    <x-header></x-header>
+        <div class="col-12 col-sm-10">
             <h1 class="title-section-dark">{{$project[0]['meta_title']}}</h1>
             <div class="" >
                 <div class="row d-flex justify-content-between flex-wrap col-12">
@@ -63,5 +63,5 @@
                 <div class="btn-outline-secondary-inners"></div>
             </a>
         </div>
-        @extends('footer')
+    <x-footer></x-footer>
     </body>

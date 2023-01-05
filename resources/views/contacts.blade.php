@@ -100,9 +100,9 @@
     </script>
     </head>
     <body class="container-fluid row p-0 m-0 d-flex justify-content-center">
-        @include('header')
+    <x-header></x-header>
         <section class="d-flex row p-0 m-0 text-body col-10" >
-            <h1 class="title-section-white">{{$descryptions['h1']}}</h1>
+            @h2dk( Контакты )
             <div class="container " style="margin-bottom: 10vh" >
                 <div class="row">
                     <div class="col-3">
@@ -212,5 +212,5 @@
             </div>
         </section>
 
-        @extends('footer')
+    <x-footer></x-footer>
     </body>

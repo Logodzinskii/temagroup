@@ -31,7 +31,7 @@ class CompleteProjectController extends Controller
             ];
         }
 
-        return view('compliteProject/compliteProject', ['complete'=> $allProject, 'page' => Descryptions::firstWhere('page','=','complete')]);
+        return view('compliteProject/compliteProject', ['complete'=> $allProject, 'page' => Descryptions::firstWhere('page','=','/complete/')]);
     }
 
     /**

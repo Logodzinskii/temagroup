@@ -72,7 +72,7 @@ Route::get('/catalog/{article}', [\App\Http\Controllers\CatalogController::class
 Route::get('/calculate/{model}', [CalculateContentController::class, 'showKitchen']);
 
 Route::get('/contacts/', function () {
-    $desryptions = Descryptions::firstWhere('page','=','contacts');
+    $desryptions = Descryptions::firstWhere('page','=','/contacts/');
     return view('contacts', ['descryptions'=>$desryptions]);
 });
 

@@ -93,10 +93,13 @@
 }
 .title-section-white::before{
     position: absolute;
-    top:-55px;
-    left: 45%;
+    margin-left: auto;
+    margin-right: auto;
+    top: -30px;
+    left: 0;
+    right: 0;
+    text-align: center;
     font-size: 8px;
-    padding: 30px 0 30px 0;
     content: "__________________________________";
 }
 .title-section-dark{
@@ -107,8 +110,11 @@
 }
 .title-section-dark::before{
     position: absolute;
-    top:-55px;
-    left: 45%;
+    margin-left: auto;
+    margin-right: auto;
+    top: -30px;
+    left: 0;
+    right: 0;
     font-size: 8px;
     padding: 30px 0 30px 0;
     content: "__________________________________";

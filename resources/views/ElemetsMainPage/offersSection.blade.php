@@ -1,8 +1,6 @@
 <section class="container-fluid bg-light row d-flex justify-content-center align-items-center flex-wrap">
     @if(count($catalog) > 0)
-        <div class="position-relative" style="height: 120px">
-            <h1 class="text-center title-section-dark title-slide">Готовые решения</h1>
-        </div>
+        @h2dk(ГОТОВЫЕ РЕШЕНИЯ)
     @endif
     <div class="container top-bottom-50">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 d-flex justify-content-between" >

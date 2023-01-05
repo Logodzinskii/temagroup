@@ -19,9 +19,9 @@
 
     </head>
     <body class="container-fluid p-0 m-0">
-        @include('header')
+    <x-header></x-header>
 
         @include('admin/adminCenterPanel')
 
-        @extends('footer')
+    <x-footer></x-footer>
     </body>

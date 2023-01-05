@@ -26,7 +26,7 @@
         </script>
     </head>
     <body class="container-fluid p-0 m-0 row d-flex justify-content-center">
-        @include('header')
+    <x-header></x-header>
         <div class="col-12">
             <h1 class="title-section-dark">{{$page['h1']}}</h1>
             <div class="" >
@@ -172,5 +172,5 @@
                 </a>
             </div>
             @endguest
-        @extends('footer')
+    <x-footer></x-footer>
     </body>

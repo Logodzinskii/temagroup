@@ -1,6 +1,4 @@
-<div class="position-relative" style="height: 20vh">
-    <h2 class="title-section-dark title-slide">ДОСТАВКА И МОНТАЖ</h2>
-</div>
+@h2dk(ДОСТАВКА И МОНТАЖ)
 <section class="container-fluid bg-primary text-white d-flex justify-content-center align-items-center flex-wrap">
     <div class="d-flex justify-content-between  align-items-center flex-wrap">
         <div class="col-12 col-sm-12 col-md-4  owl-item d-flex justify-content-start">

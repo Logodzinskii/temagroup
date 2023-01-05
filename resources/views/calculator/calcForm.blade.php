@@ -656,7 +656,7 @@
     </script>
     </head>
     <body class="container-fluid p-0 m-0">
-        @include('header')
+    <x-header></x-header>
         <form id="orderForm">
             @csrf
             <input type="hidden" id="_token" value="{{ csrf_token() }}">
@@ -862,5 +862,5 @@
                 </div>
             </div>
         </div>
-        @include('footer')
+    <x-footer></x-footer>
     </body>

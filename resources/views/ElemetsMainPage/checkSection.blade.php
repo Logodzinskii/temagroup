@@ -1,6 +1,4 @@
-<div class="position-relative" style="height: 20vh">
-    <h2 class="text-center title-section-dark title-slide" style="padding: 20px">ЗАКАЗАТЬ МЕБЕЛЬ У НАС - ПРОСТО</h2>
-</div>
+@h2dk(ЗАКАЗАТЬ МЕБЕЛЬ У НАС - ПРОСТО)
 <section class="col-lg-12 row bg-primary text-white justify-content-around p-0 m-0" style="min-height: 20vh">
     <div class="d-flex row justify-content-center col-lg-3 flex-wrap">
         <h3 style="width: 100%; height: 70px; text-align: center">ЗАМЕРЫ</h3>

@@ -16,7 +16,7 @@
         <script type="text/javascript" src="{{asset('js/calculate_slider.js')}}"></script>
     </head>
     <body class="container-fluid p-0 m-0">
-        @include('header')
+    <x-header></x-header>
         <section style="min-height: 60vh; margin-top: 20px">
             @foreach($details as $detail)
             <div class="bg-light">
@@ -40,5 +40,5 @@
                 </div>
             @endforeach
         </section>
-        @extends('footer')
+    <x-footer></x-footer>
     </body>
