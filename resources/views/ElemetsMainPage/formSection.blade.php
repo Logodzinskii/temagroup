@@ -39,6 +39,10 @@
         </div>
         <input type="hidden" class="sumForm" name="sumForm" value="0"/>
         <input type="hidden"  name="kitchenConfigurations" value="Default" />
+        <div class="mb-3 form-check">
+            <input type="checkbox" name="privacy" class="form-check-input form-control" id="exampleCheck1" data-valid="0">
+            <label class="form-check-label" for="exampleCheck1">Я соглашаюсь с <a href="/privacy/" class="link-dark">политикой обработки персональных данных</a></label>
+        </div>
         <button type="submit" class="btn btn-outline-secondary btn-submit col-10 col-sm-10 col-md-6 " disabled>
             Отправить
             <div class="btn-outline-secondary-inners"></div>

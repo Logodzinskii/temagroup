@@ -5,98 +5,9 @@
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <META NAME="description" content="Узнай размеры кухонного гарнитура на сайте в калькуляторе. Сделай заказ кухни.">
         <title>Размеры кухонного гарнитура</title>
-        <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-        <link rel="icon" type="image/png" href="{{ asset('images/logo/logo.png') }}"/>
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href={{ asset('css/owl.carousel.min.css') }}>
-        <link rel="stylesheet" href={{ asset('css/owl.theme.default.min.css') }}>
-        <link rel="stylesheet" href={{ asset('css/calcv2.css') }}>
-    <link rel="stylesheet" href={{ asset('css/main.css') }}>
-    <link rel="stylesheet" href={{ asset('css/bootstrap.css') }}>
-        <script src="{{asset('js/bootstrap.bundle.js')}}"></script>
-    <!-- Yandex.Metrika counter -->
-    <script type="text/javascript" >
-        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-            m[i].l=1*new Date();
-            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-        ym(90538515, "init", {
-            clickmap:true,
-            trackLinks:true,
-            accurateTrackBounce:true,
-            webvisor:true
-        });
-    </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/90538515" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-    <!-- /Yandex.Metrika counter -->
+        @include('ElemetsMainPage/script')
     <script type="text/javascript">
         $(document).ready(function() {
-
-            $('input[name=firstname]').bind('input',function(){
-
-                if($(this).val().match(/[А-Яа-яЁё]/) !== null )
-                {
-                    $(this).css('background', 'rgba(46, 171, 63, 0.5)');
-                    $(this).parent().children().eq(3).css('display','none').text('');
-                    $(this).attr('data-valid', 1);
-                }else {
-                    $(this).css('background', 'rgba(209, 31, 31, 0.5)');
-                    $(this).parent().children().eq(3).css('display','block').text('Введите имя и фамилию на русском языке');
-                    $(this).attr('data-valid', 0);
-                }
-                ch();
-            })
-
-            $('input[name=email]').bind('input',function()
-            {
-                if($(this).val().match(/\w+@\w+\.\w+/) !== null )
-                {
-                    $(this).css('background', 'rgba(46, 171, 63, 0.5)');
-                    $(this).parent().children().eq(3).css('display','none').text('')
-                    $(this).attr('data-valid', 1);
-
-                }else {
-                    $(this).css('background', 'rgba(209, 31, 31, 0.5)');
-                    $(this).parent().children().eq(3).css('display','block').text('Введите email в формате: example@mail.ru');
-                    $(this).attr('data-valid', 0);
-                }
-                ch();
-            })
-            $('input[name=tel]').bind('input',function()
-            {
-                if($(this).val().match(/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/) !== null )
-                {
-                    $(this).css('background', 'rgba(46, 171, 63, 0.5)');
-                    $(this).parent().children().eq(3).css('display','none').text('');
-                    $(this).attr('data-valid', 1);
-
-                }else {
-                    $(this).css('background', 'rgba(209, 31, 31, 0.5)');
-                    $(this).parent().children().eq(3).css('display','block').text('Введите телефон +79XX-XXX-XX-XX');
-                    $(this).attr('data-valid', 0);
-                }
-                ch();
-            })
-            function ch(){
-                var sumValid = 0;
-
-                $('.form-control').each(function(){
-
-                    sumValid += parseInt($(this).attr('data-valid'));
-
-                })
-
-                if(sumValid >= 3 ){
-                    $(".btn-submit").prop('disabled',false);
-                }else{
-                    $(".btn-submit").prop('disabled',true);
-                }
-
-                console.log(sumValid);
-            }
-
 
             $("#orderForm input:radio:first").attr('checked', true);
 
@@ -819,6 +730,10 @@
                     <div class="mb-3">
                         <label for="Textarea" class="form-label">Дополнительная информация</label>
                         <textarea class="form-control" name="body" id="Textarea" rows="3" data-valid="0"  placeholder="Например: уточнение по параметрам кухни, или необходимости индивидуального расчета" required></textarea>
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" name="privacy" class="form-check-input form-control" id="exampleCheck1" data-valid="0">
+                        <label class="form-check-label" for="exampleCheck1">Я соглашаюсь с <a href="/privacy/" class="link-dark">политикой обработки персональных данных</a></label>
                     </div>
                     <div class="mb-3">
                         <input type="checkbox" name="dopprice" val="5000">

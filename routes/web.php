@@ -86,3 +86,10 @@ Route::get('/complete/', [CompleteProjectController::class, 'index']);
 Route::get('/complete/category/{category}/', [CompleteProjectController::class, 'index']);
 Route::post('/admin/add-complite-project/', [CompleteProjectController::class, 'create'])->name('create.complete.project')->middleware('auth');
 Route::get('/complete/{chpu}/', [CompleteProjectController::class, 'store']);
+
+/**
+ * Политика конфиденциальности и персональных данных
+ */
+Route::get('/privacy/', function (){
+    return view('private');
+});

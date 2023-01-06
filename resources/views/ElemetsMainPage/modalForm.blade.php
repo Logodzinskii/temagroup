@@ -2,15 +2,15 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title ">Готовы сделать заказ?</h1>
+                <h1 class="modal-title ">Форма обратной связи</h1>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <section class="modal-body p-0 m-0 d-flex justify-content-around align-items-start flex-wrap bg-dark text-white">
-                <form class="container" id="orderForm">
+            <section class="modal-body p-0 m-3 d-flex justify-content-around align-items-start flex-wrap bg-dark text-white">
+                <form class="container " id="orderForm">
                     @csrf
-                    <h2 class="text-center">Отправьте заявку на расчет</h2>
+                    <h2 class="text-center">Свяжитесь со мной</h2>
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-2 ">
                         <input type="hidden" name="category" value="0">
                         <input type="hidden" name="article" value="0">
@@ -55,8 +55,12 @@
                             <input type="hidden"  name="kitchenConfigurations" value="" />
                         </div>
                     </div>
+                    <div class="mb-3 form-label">
+                        <input type="checkbox" name="privacy" class="form-check-input form-control" id="exampleCheck1" data-valid="0">
+                        <label class="form-check-label" for="exampleCheck1">Я соглашаюсь с <a href="/privacy/" class="link-secondary">политикой обработки персональных данных</a></label>
+                    </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary btn-submit btn btn-sm" disabled>Оформить заказ</button>
+                        <button type="submit" class="btn btn-primary btn-submit btn btn-sm" disabled>Отправить</button>
                     </div>
                 </form>
             </section>
