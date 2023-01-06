@@ -12,6 +12,7 @@
         <div class="col-6">
 
         </div>
+        <a href="/privacy/">Политика конфиденциальности</a>
     </div>
     <?php if (empty($_COOKIE['messages_cookies'])): ?>
     <div class="messages_cookies">
