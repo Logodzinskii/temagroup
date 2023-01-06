@@ -3,7 +3,7 @@
     <div class="col-10 d-flex row justify-content-start align-items-start" style="z-index: 1;">
         <ul class="fs-5 list-unstyled text-white d-flex row align-items-baseline" style="height: 60vh; margin-top: 60px">
             <li>МЫ СОЗДАЕМ КОРПУСНУЮ МЕБЕЛЬ</li>
-            <li><a href="/complete/category/wardrobe/">ШКАФЫ-КУПЕ</a></li>
+            <li><a href="/complete/category/wardrobe/">ШКАФЫ, ШКАФЫ-КУПЕ</a></li>
             <li><a href="/complete/category/kitchen/">КУХНИ</a></li>
             <li>МЕБЕЛЬ В ВАННУЮ</li>
         </ul>
