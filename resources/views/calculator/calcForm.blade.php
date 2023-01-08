@@ -568,6 +568,7 @@
     </head>
     <body class="container-fluid p-0 m-0">
     <x-header></x-header>
+    <p class="text-warning">Раздел "каклькулятор" находится в тестовом режиме. (Цены уточняйте у специалиста). Ждем ваши предложения и замечания <a href="mailto:temagroupekb@gmail.com" class="link-dark">temagroupekb@gmail.com</a> </p>
         <form id="orderForm">
             @csrf
             <input type="hidden" id="_token" value="{{ csrf_token() }}">
