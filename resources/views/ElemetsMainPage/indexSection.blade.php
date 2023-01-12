@@ -2,10 +2,20 @@
 <section class="bg-img-main d-flex justify-content-center flex-wrap align-items-end section-h75 position-relative">
     <div class="col-10 d-flex row justify-content-start align-items-start" style="z-index: 1;">
         <ul class="fs-5 list-unstyled text-white d-flex row align-items-baseline" style="height: 60vh; margin-top: 60px">
-            <li>МЫ СОЗДАЕМ КОРПУСНУЮ МЕБЕЛЬ</li>
-            <li><a href="/complete/category/wardrobe/">ШКАФЫ, ШКАФЫ-КУПЕ</a></li>
-            <li><a href="/complete/category/kitchen/">КУХНИ</a></li>
-            <li>МЕБЕЛЬ В ВАННУЮ</li>
+            <li>МЫ СОЗДАЕМ КОРПУСНУЮ МЕБЕЛЬ.
+                <p>Изготавливаем в основном кухонную мебель
+                    в следующих стилях:
+                    Современном,
+                    Минимализм,
+                    Прованс,
+                    Хай-тек,
+                    Модерн,
+                    Лофт и др.
+                </p>
+            </li>
+            <li><a href="/complete/" class="text-uppercase">Примеры наших работ</a></li>
+            <li><a href="/offers/kitchen/" class="text-uppercase">Примерная стоимость КУХНИ</a></li>
+            <li><!--<a href="/complete/category/wardrobe/">ШКАФЫ, ШКАФЫ-КУПЕ</a>--></li>
         </ul>
         <a href="#form">
         <div class="btn btn-outline-primary col-12 col-sm-12 col-md-6 ">

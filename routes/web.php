@@ -12,6 +12,7 @@ use App\Http\Controllers\ControllerYml;
 use App\Models\Descryptions;
 use App\Http\Controllers\CompleteProjectController;
 use App\Http\Controllers\DescryptionsController;
+use App\Http\Controllers\Offers;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -87,6 +88,10 @@ Route::get('/complete/category/{category}/', [CompleteProjectController::class, 
 Route::post('/admin/add-complite-project/', [CompleteProjectController::class, 'create'])->name('create.complete.project')->middleware('auth');
 Route::get('/complete/{chpu}/', [CompleteProjectController::class, 'store']);
 
+/**
+ * Маршруты для заказа по типовому примеру
+ */
+Route::get('/offers/{type}/', [Offers::class,'index']);
 /**
  * Политика конфиденциальности и персональных данных
  */
