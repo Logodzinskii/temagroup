@@ -9,7 +9,7 @@
             <button type="button" class="btn-close text-reset align-self-end" data-bs-dismiss="offcanvas" aria-label="Закрыть"></button>
             <ul class="text-center text-white list-unstyled text-start navbar-nav row col-md-12 mb-2 mb-lg-0 d-flex col justify-content-center align-content-between p-0 m-0">
                 <li>
-                    <h2 class="fs-6 main-menu-text" style="margin-bottom: 10vh">КОМПАНИЯ-ТЕМА.РФ</h2>
+                    <h2 class="fs-6 main-menu-text" style="margin-bottom: 10vh">КУХНИ УРАЛА</h2>
                     <ul class="list-unstyled row d-flex justify-content-center ">
                         @php
                         $links = \App\Models\Descryptions::all();
@@ -53,7 +53,7 @@
     </nav>
     <nav class="navbar navbar-expand-lg col-10 d-none d-sm-none d-md-block d-lg-block d-xl-block d-xxl-block">
         <div class="container-fluid">
-            <a class="navbar-brand main-menu-text" href="#">КОМПАНИЯ-ТЕМА.РФ</a>
+            <a class="navbar-brand main-menu-text" href="#">КУХНИ УРАЛА</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>

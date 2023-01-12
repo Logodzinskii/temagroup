@@ -10,11 +10,12 @@
     <body class="container-fluid p-0 m-0">
         <x-header></x-header>
         @include('ElemetsMainPage/indexSection')
-        @include('ElemetsMainPage/portfolio')
-        @include('ElemetsMainPage/visualSection')
-        @include('ElemetsMainPage/offersSection')
+        @include('ElemetsMainPage/mainSection')
         @include('ElemetsMainPage/infoSection')
+        @include('ElemetsMainPage/portfolio')
+        @include('ElemetsMainPage/offersSection')
         @include('ElemetsMainPage/deliverySection')
+        @include('ElemetsMainPage/visualSection')
         @include('ElemetsMainPage/checkSection')
         @include('ElemetsMainPage/infoVisitors')
         @include('ElemetsMainPage/formSection')
